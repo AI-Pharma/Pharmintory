@@ -51,7 +51,7 @@ const Sidebar = () => {
                     icon='/svgs/sidebar/settings.svg'
                     dropdownArrow='/svgs/sidebar/dropdown.svg'
                     dropdownItems={['Edit Profile', 'Privacy Policy', 'Notifications', 'Logout']}
-                    dropdownLinks={['/settings', '/settings/privacy-policy', '/settings/notifications', '/settings/logout']}
+                    dropdownLinks={['/settings', '/settings?tab=privacy-policy', '/settings?tab=notifications', '/settings?tab=logout']}
                 />
                 <SidebarTile icon='/svgs/sidebar/about.svg' text='About' active={activeIndexes[5]} href='' onClick={() => handleClicked(5)}/>
                 <SidebarTile icon='/svgs/sidebar/help.svg' text='Help' active={activeIndexes[6]} href='' onClick={() => handleClicked(6)}/>
