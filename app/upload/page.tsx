@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Card from '@components/Card'
-import DrugFormTile from '@components/DrugFormTile'
+import { DrugFormTile } from '@components/FormTiles'
 import DrugPicUploadTile from '@components/DrugPicUploadTile'
 import { FilledButton, OutlinedButton } from '@components/Buttons'
 

@@ -29,11 +29,13 @@
     --color-teamGroupColor: #D5D6D7;
     --color-browseImgColor: #448DF2;
     --color-drugOverviewClr: #023E8A;
+    --color-editProfileLabel: #232323;
     --color-drugOverviewGrey: #636363;
     --color-statTileDescText: #6A7282;
     --color-dashedBorderColor: #9D9D9D;
     --color-databaseBorderColor: #EAECF0;
     --color-teamMemberTileColor: #ECEFFF;
+    --color-inactiveSettingsLink: #718EBF;
     --color-outlinedBtnBorderClr: #D0D5DD;
     --color-pharmacistOverviewText: #383838;
     --color-background: var(--background);
@@ -88,7 +90,7 @@ body {
 }
 
 .navBar {
-    @apply flex h-20 w-full py-5 px-[3.94rem] justify-between items-center mb-[1.3125rem]
+    @apply flex h-20 w-full py-5 px-[3.94rem] justify-between items-center mb-[1.3125rem] bg-white
 }
 
 .searchBox {
