@@ -151,3 +151,7 @@ body {
 .teamTile {
     @apply flex flex-col pt-[2.9375rem] items-center rounded-[1rem] border-solid
 }
+
+.rootNav {
+    @apply flex px-[1.875rem] justify-between py-[1.5625rem]
+}

@@ -1,5 +1,3 @@
-import NavBar from "@components/NavBar";
-import Sidebar from "@components/sideBar/Sidebar";
 import "@styles/globals.css"
 import type { Metadata } from "next";
 import { Poppins, Roboto, Inter } from "next/font/google";
@@ -37,18 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} ${roboto.variable} ${inter.variable} antialiased`}
-      >
-        <div className="app-container">
-          <Sidebar/>
-          <div className="main-content">
-            <NavBar/>
-            <main className="page-content">
-              {children}
-            </main>
-          </div>
-        </div>
+      <body className={`${poppins.variable} ${roboto.variable} ${inter.variable} antialiased`}>
+          {children}
       </body>
     </html>
   );
