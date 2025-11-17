@@ -26,6 +26,7 @@
     --color-statTileSvgBg: #DBEAFE;
     --color-someBlueColor: #101828;
     --color-dbButtonColor: #344054;
+    --color-someBlackColor: #1A1A1A;
     --color-teamGroupColor: #D5D6D7;
     --color-browseImgColor: #448DF2;
     --color-drugOverviewClr: #023E8A;
@@ -78,6 +79,10 @@ body {
 
 .inter-font {
     font-family: var(--font-inter);
+}
+
+.urbanist-font {
+    font-family: var(--font-urbanist)
 }
 
 .page-content {
@@ -135,7 +140,6 @@ body {
     @apply flex px-4 py-[9px] justify-center items-center font-bold leading-[0.005rem] rounded-[50px] bg-white text-black border-2 text-[0.6875rem] border-black border-solid active:bg-activeBtn active:text-white uppercase
 }
 
-
 .tableCell {
     @apply px-[0.75rem] py-[1rem] text-databaseDesc border-b-[1px] border-databaseBorderColor
 }
@@ -153,5 +157,5 @@ body {
 }
 
 .rootNav {
-    @apply flex px-[1.875rem] justify-between py-[1.5625rem]
+    @apply flex px-[1.875rem] justify-between py-[1.5625rem] h-[5rem] mb-[10.9375rem]
 }
