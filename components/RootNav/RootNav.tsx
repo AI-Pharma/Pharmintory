@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import RootNavLink from './RootNavLinks'
-import { FilledButton, OutlinedButton } from '@components/Buttons'
+import Link from '@node_modules/next/link'
 
 const RootNav = () => {
 
@@ -41,13 +41,18 @@ const RootNav = () => {
             </div>
 
             <div className='flex gap-[.9375rem]'>
-                <OutlinedButton
-                    className='py-[.5rem] px-[1.3181rem]'
-                    label='Sign In'
-                />
-                <FilledButton
-                    label='Sign Up'
-                />
+                <Link
+                    href='/login'
+                    className='loginButton urbanist-font'
+                >
+                    Sign In
+                </Link>
+                <Link
+                    href='/signup'
+                    className='signUpButton urbanist-font'
+                >
+                    Sign Up
+                </Link>
             </div>
         </nav>
     )
