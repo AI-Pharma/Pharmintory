@@ -1,6 +1,5 @@
 import "@styles/globals.css"
 import type { Metadata } from "next";
-import RootNav from "@components/RootNav/RootNav";
 import { Poppins, Roboto, Inter, Urbanist } from "next/font/google";
 
 const poppins = Poppins({
@@ -44,7 +43,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${roboto.variable} ${inter.variable} ${urbanist.variable} antialiased`}>
-          <RootNav/>
           {children}
       </body>
     </html>
