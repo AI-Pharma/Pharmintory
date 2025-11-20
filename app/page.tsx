@@ -1,10 +1,11 @@
 import FeatureTile from '@components/FeatureTile'
-import { featureTileInfo } from '@constants/prime'
+import MeritTile from '@components/MeritTile'
+import { featureTileInfo, meritTileInfo } from '@constants/prime'
 import Image from 'next/image'
 
 const Landing = () => {
     return (
-        <main className='flex flex-col items-center mt-[3.8125rem] px-[19.3125rem]'>
+        <main className='flex flex-col items-center mt-[3.8125rem]'>
 
             {/* First Component */}
             <div className='flex flex-col w-[39.6875rem] items-center gap-[1.4375rem] mb-[4.25rem]'>
@@ -37,7 +38,7 @@ const Landing = () => {
                 <p className='text-someBlackColor text-center urbanist-font text-[3.25rem] font-medium leading-[4rem] tracking-[-0.0587rem]'>Smart tools for smarter data management</p>
             </div>
 
-            <div className='flex gap-[1.875rem]'>
+            <div className='flex gap-[1.875rem] mb-[23.1875rem]'>
                 {featureTileInfo.map((info, index) => (
                     <FeatureTile
                         key={index}
@@ -47,6 +48,19 @@ const Landing = () => {
                     />
                 ))}
             </div>
+
+            {
+                meritTileInfo.map((info, index) => (
+                    <MeritTile
+                        key={index}
+                        image={info.image}
+                        title={info.title}
+                        position={index + 1}
+                        foreground={info.foreground}
+                        description={info.description}
+                    />
+                ))
+            }
         </main>
     )
 }

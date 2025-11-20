@@ -1,4 +1,5 @@
 import { FeatureTileProps } from "@components/FeatureTile";
+import { MeritTileProps } from "@components/MeritTile";
 
 export const featureTileInfo: FeatureTileProps[] = [
     {
@@ -15,5 +16,26 @@ export const featureTileInfo: FeatureTileProps[] = [
         icon: '/svgs/layers.svg',
         text: 'Need Help? Access the best help service through our help centres and contact our help desk for any other issues.',
         href: '/'
+    },
+]
+
+export const meritTileInfo: MeritTileProps[] = [
+    {
+        image: '/images/demo_1.png',
+        foreground: '/svgs/prime.svg',
+        title: 'Easy to understand breakdown of work',
+        description: 'Buy and sell popular digital currencies, keep track of them in the one place. Has a variety of features that make it the best place to start trading'
+    },
+    {
+        image: '/images/demo_2.png',
+        foreground: '/svgs/secondth.svg',
+        title: 'Well detailed stock list',
+        description: 'The Exchange supports USD, EUR, and GBP. Invest in cryptocurrency slowly over time by scheduling buys daily, weekly, or monthly.'
+    },
+    {
+        image: '/images/demo_3.png',
+        foreground: '/svgs/thirds.svg',
+        title: 'Simple and understandable interface',
+        description: 'Safety, security and compliance. Buy and sell popular digital currencies, keep track of them in the one place.'
     },
 ]

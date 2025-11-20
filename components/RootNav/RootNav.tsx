@@ -42,6 +42,7 @@ const RootNav = () => {
 
             <div className='flex gap-[.9375rem]'>
                 <OutlinedButton
+                    className='py-[.5rem] px-[1.3181rem]'
                     label='Sign In'
                 />
                 <FilledButton
