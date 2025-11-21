@@ -34,7 +34,7 @@ const Sidebar = () => {
                     active={activeIndexes[1]}
                     onClick={() => handleClicked(1)}
                     icon='/svgs/sidebar/inventory.svg'
-                    dropdownArrow='/svgs/sidebar/dropdown.svg'
+                    dropdownArrow='/svgs/dropdown.svg'
                     dropdownItems={['Database', 'Statistics', 'Pending Approvals']}
                     dropdownLinks={['/database', '/', '/']}
                 />
@@ -49,7 +49,7 @@ const Sidebar = () => {
                     active={activeIndexes[4]}
                     onClick={() => handleClicked(4)}
                     icon='/svgs/sidebar/settings.svg'
-                    dropdownArrow='/svgs/sidebar/dropdown.svg'
+                    dropdownArrow='/svgs/dropdown.svg'
                     dropdownItems={['Edit Profile', 'Privacy Policy', 'Notifications', 'Logout']}
                     dropdownLinks={['/settings', '/settings?tab=privacy-policy', '/settings?tab=notifications', '/settings?tab=logout']}
                 />
