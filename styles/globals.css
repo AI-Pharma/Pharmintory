@@ -196,10 +196,6 @@
   @apply flex px-4 lg:px-[1.875rem] justify-between py-4 lg:py-[1.5625rem] h-[5rem] items-center;
 }
 
-.meritTile {
-  @apply flex w-[105rem] items-center even:flex-row-reverse relative justify-between mb-[4rem];
-}
-
 /*
 ---break--- */
 

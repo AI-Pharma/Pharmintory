@@ -46,6 +46,7 @@ const Landing = () => {
           <Image
             width={1200}
             height={600}
+            quality={100}
             alt="dashboard image"
             src="/images/dashboard.png"
             className="w-[960px] h-auto"
@@ -80,16 +81,18 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* {meritTileInfo.map((info, index) => (
-        <MeritTile
-          key={index}
-          image={info.image}
-          title={info.title}
-          position={index + 1}
-          foreground={info.foreground}
-          description={info.description}
-        />
-      ))} */}
+      <section className="mt-24 flex flex-col gap-y-48 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+        {meritTileInfo.map((info, index) => (
+          <MeritTile
+            key={index}
+            image={info.image}
+            title={info.title}
+            even={(index + 1) % 2 === 0}
+            foreground={info.foreground}
+            description={info.description}
+          />
+        ))}
+      </section>
     </main>
   );
 };
