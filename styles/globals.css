@@ -1,49 +1,81 @@
 @import "tailwindcss";
-
-:root {
-    --background: #F9FAFB;
-    --foreground: #171717;
-}
+@import "tw-animate-css";
+/*
+---break--- */
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --color-pending: #E4E8F2;
-    --color-rejected: #FFE1E3;
-    --color-approved: #D9F6E8;
-    --color-cyanText: #04B4FC;
-    --color-nameGrey: #404040;
-    --color-activeBtn: #0077B6;
-    --color-lightGrey: #CBCBCB;
-    --color-footerGrey: #767676;
-    --color-unimportant: #565656;
-    --color-sideBarGrey: #83899F;
-    --color-pendingText: #364254;
-    --color-inactiveGrey: #9CA0B2;
-    --color-approvedText: #037847;
-    --color-teamPharmacy: #6C7172;
-    --color-rejectedText: #8F130A;
-    --color-databaseDesc: #667085;
-    --color-buttonBgColor: #E3FAFF;
-    --color-statTileSvgBg: #DBEAFE;
-    --color-someBlueColor: #101828;
-    --color-dbButtonColor: #344054;
-    --color-someBlackColor: #1A1A1A;
-    --color-teamGroupColor: #D5D6D7;
-    --color-authTitleColor: #2B3674;
-    --color-browseImgColor: #448DF2;
-    --color-drugOverviewClr: #023E8A;
-    --color-editProfileLabel: #232323;
-    --color-drugOverviewGrey: #636363;
-    --color-statTileDescText: #6A7282;
-    --color-dashedBorderColor: #9D9D9D;
-    --color-databaseBorderColor: #EAECF0;
-    --color-teamMemberTileColor: #ECEFFF;
-    --color-inactiveSettingsLink: #718EBF;
-    --color-outlinedBtnBorderClr: #D0D5DD;
-    --color-pharmacistOverviewText: #383838;
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-poppins);
-    --font-mono: var(--font-geist-mono);
+  --color-pending: #e4e8f2;
+  --color-rejected: #ffe1e3;
+  --color-approved: #d9f6e8;
+  --color-cyanText: #04b4fc;
+  --color-nameGrey: #404040;
+  --color-activeBtn: #0077b6;
+  --color-lightGrey: #cbcbcb;
+  --color-footerGrey: #767676;
+  --color-unimportant: #565656;
+  --color-sideBarGrey: #83899f;
+  --color-pendingText: #364254;
+  --color-inactiveGrey: #9ca0b2;
+  --color-approvedText: #037847;
+  --color-teamPharmacy: #6c7172;
+  --color-rejectedText: #8f130a;
+  --color-databaseDesc: #667085;
+  --color-buttonBgColor: #e3faff;
+  --color-statTileSvgBg: #dbeafe;
+  --color-someBlueColor: #101828;
+  --color-dbButtonColor: #344054;
+  --color-someBlackColor: #1a1a1a;
+  --color-teamGroupColor: #d5d6d7;
+  --color-authTitleColor: #2b3674;
+  --color-browseImgColor: #448df2;
+  --color-drugOverviewClr: #023e8a;
+  --color-editProfileLabel: #232323;
+  --color-drugOverviewGrey: #636363;
+  --color-statTileDescText: #6a7282;
+  --color-dashedBorderColor: #9d9d9d;
+  --color-databaseBorderColor: #eaecf0;
+  --color-teamMemberTileColor: #ecefff;
+  --color-inactiveSettingsLink: #718ebf;
+  --color-outlinedBtnBorderClr: #d0d5dd;
+  --color-pharmacistOverviewText: #383838;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 /*
@@ -54,121 +86,203 @@
     }
 } */
 
-body {
-    background: var(--background);
-    color: var(--foreground);
-}
-
 .app-container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
 
 .main-content {
-    flex: 1;
-    display: flex;
-    margin: 0, 0;
-    padding: 0, 0;
-    flex-direction: column;
-    overflow: hidden;
+  flex: 1;
+  display: flex;
+  margin: 0, 0;
+  padding: 0, 0;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .roboto-font {
-    font-family: var(--font-roboto);
+  font-family: var(--font-roboto);
 }
 
 .inter-font {
-    font-family: var(--font-inter);
+  font-family: var(--font-inter);
 }
 
 .urbanist-font {
-    font-family: var(--font-urbanist)
+  font-family: var(--font-urbanist);
 }
 
 .page-content {
-    @apply flex-1 overflow-auto
+  @apply flex-1 overflow-auto;
 }
 
 /* Ensure the sidebar takes full height */
 .sidebar {
-    height: 100vh;
+  height: 100vh;
 }
 
 .navBar {
-    @apply flex h-20 w-full py-5 px-[3.94rem] justify-between items-center mb-[1.3125rem] bg-white
+  @apply flex h-20 w-full py-5 px-[3.94rem] justify-between items-center mb-[1.3125rem] bg-white;
 }
 
 .searchBox {
-    @apply flex w-full h-16 border-cyanText rounded-[10px] border-[1px] p-5 items-center my-[1.375rem] mr-[12.375rem]
+  @apply flex w-full h-16 border-cyanText rounded-[10px] border-[1px] p-5 items-center my-[1.375rem] mr-[12.375rem];
 }
 
 .pharmacyNotificationsTile {
-    @apply flex h-[4rem] gap-x-[1.825rem] items-center justify-start min-w-[17.1875rem]
+  @apply flex h-[4rem] gap-x-[1.825rem] items-center justify-start min-w-[17.1875rem];
 }
 
 .sideBar {
-    @apply flex flex-col h-full w-[17.5rem] bg-[#FFF]
+  @apply flex flex-col h-full w-[17.5rem] bg-[#FFF];
 }
 
 .statTile {
-    @apply flex rounded-2xl shadow-sm py-[2rem] px-[1rem] h-[6.75rem] w-[12.875rem] items-start
+  @apply flex rounded-2xl shadow-sm py-[2rem] px-[1rem] h-[6.75rem] w-[12.875rem] items-start;
 }
 
 .statTileRow {
-    @apply flex gap-x-[4.6875rem] mb-[3.5625rem]
+  @apply flex gap-x-[4.6875rem] mb-[3.5625rem];
 }
 
 .drugPharmacistOverview {
-    @apply flex flex-col w-[22.5rem] h-[37.5625rem] p-[1.5625rem] items-center bg-[#FFF]
+  @apply flex flex-col w-[22.5rem] h-[37.5625rem] p-[1.5625rem] items-center bg-[#FFF];
 }
 
 @layer components {
-    .outlinedButton {
-        @apply flex py-[0.625rem] px-[1rem] items-center justify-center text-dbButtonColor leading-[1.25rem] font-medium text-[0.875rem] gap-x-[0.5rem] border-[0.0625rem] border-outlinedBtnBorderClr rounded-[0.5rem] hover:cursor-pointer;
-    }
+  .outlinedButton {
+    @apply flex py-[0.625rem] px-[1rem] items-center justify-center text-dbButtonColor leading-[1.25rem] font-medium text-[0.875rem] gap-x-[0.5rem] border-[0.0625rem] border-outlinedBtnBorderClr rounded-[0.5rem] hover:cursor-pointer;
+  }
 
-    .normalButton {
-        @apply flex py-[0.625rem] px-[1rem] items-center justify-center text-dbButtonColor leading-[1.25rem] font-medium text-[0.875rem] gap-x-[0.5rem] hover:cursor-pointer
-    }
+  .normalButton {
+    @apply flex py-[0.625rem] px-[1rem] items-center justify-center text-dbButtonColor leading-[1.25rem] font-medium text-[0.875rem] gap-x-[0.5rem] hover:cursor-pointer;
+  }
 
-    .filledButton {
-        @apply flex py-[0.625rem] px-[1rem] items-center justify-center leading-[1.25rem] font-medium text-[0.875rem] gap-x-[0.5rem] border-[0.0625rem] border-outlinedBtnBorderClr rounded-[0.5rem] bg-cyanText text-white hover:cursor-pointer
-    }
+  .filledButton {
+    @apply flex py-[0.625rem] px-[1rem] items-center justify-center leading-[1.25rem] font-medium text-[0.875rem] gap-x-[0.5rem] border-[0.0625rem] border-outlinedBtnBorderClr rounded-[0.5rem] bg-cyanText text-white hover:cursor-pointer;
+  }
 
-    .signUpButton {
-        @apply flex px-[1.3181rem] py-[.5rem] rounded-[.375rem] text-[#FEFEFE] text-sm font-medium leading-[1.5rem] tracking-[-0.0158rem] text-center hover:cursor-pointer bg-cyanText items-center
-    }
+  .signUpButton {
+    @apply flex px-[1.3181rem] py-[.5rem] rounded-[.375rem] text-[#FEFEFE] text-sm font-medium leading-[1.5rem] tracking-[-0.0158rem] text-center hover:cursor-pointer bg-cyanText items-center;
+  }
 
-    .loginButton {
-        @apply flex px-[1.3181rem] py-[.5rem] rounded-[.375rem] text-someBlackColor text-[1rem] font-semibold leading-[1.625rem] tracking-[-0.0181rem] text-right hover:cursor-pointer bg-[#FEFEEF] items-center
-    }
+  .loginButton {
+    @apply flex px-[1.3181rem] py-[.5rem] rounded-[.375rem] text-someBlackColor text-[1rem] font-semibold leading-[1.625rem] tracking-[-0.0181rem] text-right hover:cursor-pointer bg-[#FEFEEF] items-center;
+  }
 }
 
 .monthButton {
-    @apply flex px-4 py-[9px] justify-center items-center font-bold leading-[0.005rem] rounded-[50px] bg-white text-black border-2 text-[0.6875rem] border-black border-solid active:bg-activeBtn active:text-white uppercase
+  @apply flex px-4 py-[9px] justify-center items-center font-bold leading-[0.005rem] rounded-[50px] bg-white text-black border-2 text-[0.6875rem] border-black border-solid active:bg-activeBtn active:text-white uppercase;
 }
 
 .tableCell {
-    @apply px-[0.75rem] py-[1rem] text-databaseDesc border-b-[1px] border-databaseBorderColor
+  @apply px-[0.75rem] py-[1rem] text-databaseDesc border-b-[1px] border-databaseBorderColor;
 }
 
 .tableCellHead {
-    @apply grid grid-flow-col auto-cols-max items-center gap-[4.0625rem];
+  @apply grid grid-flow-col auto-cols-max items-center gap-[4.0625rem];
 }
 
 .upload {
-    @apply flex flex-col mt-[6.5rem] mx-[3.375rem] mb-[8.1875rem]
+  @apply flex flex-col mt-[6.5rem] mx-[3.375rem] mb-[8.1875rem];
 }
 
 .teamTile {
-    @apply flex flex-col pt-[2.9375rem] items-center rounded-[1rem] border-solid
+  @apply flex flex-col pt-[2.9375rem] items-center rounded-[1rem] border-solid;
 }
 
 .rootNav {
-    @apply flex px-[1.875rem] justify-between py-[1.5625rem] h-[5rem] mb-[10.9375rem] items-center
+  @apply flex px-4 lg:px-[1.875rem] justify-between py-4 lg:py-[1.5625rem] h-[5rem] items-center;
 }
 
 .meritTile {
-    @apply flex w-[105rem] items-center even:flex-row-reverse relative justify-between mb-[4rem]
+  @apply flex w-[105rem] items-center even:flex-row-reverse relative justify-between mb-[4rem];
+}
+
+/*
+---break--- */
+
+:root {
+  --radius: 0.625rem;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.21 0.006 285.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.705 0.015 286.067);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+}
+
+/*
+---break--- */
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.92 0.004 286.32);
+  --primary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.552 0.016 285.938);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.552 0.016 285.938);
+}
+
+/*
+---break--- */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

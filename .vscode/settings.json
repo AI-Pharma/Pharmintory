@@ -1,9 +1,24 @@
 {
-    "java.project.sourcePaths": [
-        "components"
-    ],
-    "cSpell.words": [
-        "noto",
-        "PHARMA"
-    ]
+  "java.project.sourcePaths": ["components"],
+  "cSpell.words": ["noto", "PHARMA"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#8f70d2",
+    "activityBar.background": "#8f70d2",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#e0b39e",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#8f70d2",
+    "statusBar.background": "#7149c6",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#8f70d2",
+    "statusBarItem.remoteBackground": "#7149c6",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#7149c6",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#7149c699",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#7149c6"
 }
