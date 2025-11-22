@@ -88,7 +88,6 @@ const Landing = () => {
             image={info.image}
             title={info.title}
             even={(index + 1) % 2 === 0}
-            foreground={info.foreground}
             description={info.description}
           />
         ))}

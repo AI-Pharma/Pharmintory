@@ -5,14 +5,12 @@ export interface MeritTileProps {
   image: string;
   title: string;
   even?: boolean;
-  foreground: string;
   description: string;
 }
 
 const MeritTile: React.FC<MeritTileProps> = ({
   image,
   title,
-  foreground,
   description,
   even,
 }) => {
