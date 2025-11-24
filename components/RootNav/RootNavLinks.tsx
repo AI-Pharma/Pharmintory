@@ -16,6 +16,7 @@ const RootNavLink: React.FC<RootNavLinkProps> = ({ label, href, children }) => {
       href={href}
       className={cn(
         "flex text-lg md:text-sm lg:text-base text-center hover:cursor-pointer font-medium inter-font",
+        "hover:text-cyanText/70 transition-all transform-gpu duration-150 delay-75",
         pathname === href ? "text-cyanText" : "text-inactiveSettingsLink"
       )}
     >

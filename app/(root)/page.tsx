@@ -7,6 +7,7 @@ import {
   priceCardInfo,
 } from "@constants/prime";
 import { cn } from "@lib/utils";
+import Link from "@node_modules/next/link";
 import Image from "next/image";
 
 const Landing = () => {
@@ -113,8 +114,44 @@ const Landing = () => {
           )
         )}
       </section>
-      <section className="mt-24 flex flex-col md:flex-row items-center gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
-        Hello
+      <section className="urbanist-font mt-12 flex flex-col md:flex-row items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+        <div className="flex flex-col items-center gap-[1.4375rem] mb-[4.25rem]">
+          <h3
+            className={cn(
+              "text-someBlackColor text-center urbanist-font font-semibold tracking-[-0.0722rem] md:max-w-md lg:max-w-[720px]",
+              "text-3xl md:text-4xl lg:text-[52px] leading-10 md:leading-12 lg:leading-16"
+            )}
+          >
+            Start Building Smarter Pharmaceutical Data Today
+          </h3>
+          <p className="text-[#767676] text-center md:text-xl max-w-[720px] font-medium tracking-[0.36px] leading-relaxed">
+            Collaborate, contribute, and make healthcare information more
+            organised and accessible. Whether you’re a pharmacist or data admin,
+            your journey starts here.
+          </p>
+          <div className="flex items-center gap-x-4">
+            <Link
+              href={"/"}
+              className={cn(
+                "py-3.5 px-7 text-white bg-cyanText rounded-md font-semibold md:text-lg border border-cyanText",
+                "hover:bg-cyanText/80 hover:cursor-pointer",
+                "transition-all transform-gpu duration-150 delay-75"
+              )}
+            >
+              Get Started
+            </Link>
+            <Link
+              href={"/"}
+              className={cn(
+                "py-3.5 px-7 bg-white text-cyanText rounded-md font-semibold md:text-lg border-2 border-cyanText",
+                "hover:bg-cyanText hover:text-white hover:cursor-pointer",
+                "transition-all transform-gpu duration-150 delay-75"
+              )}
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
       </section>
     </main>
   );

@@ -1,3 +1,4 @@
+import { cn } from "@lib/utils";
 import Link from "@node_modules/next/link";
 import { FaFacebookF } from "@node_modules/react-icons/fa";
 import { FaGoogle, FaLinkedinIn } from "@node_modules/react-icons/fa6";
@@ -60,7 +61,12 @@ const Footer = () => {
         </div>
       </div>
       <form className="flex justify-center md:justify-end items-start -order-1 md:order-0">
-        <div className="flex items-center gap-1 border border-[#D2D2D2] rounded-md px-3 py-2">
+        <div
+          className={cn(
+            "flex items-center gap-1 border border-[#D2D2D2] rounded-md px-3 py-2",
+            "focus-within:border-[#1A1A1A] transition-all transform-gpu duration-150 delay-75"
+          )}
+        >
           <input
             type="text"
             placeholder="Subscribe"
