@@ -1,4 +1,3 @@
-import RootNav from "@components/RootNav/RootNav";
 import "@styles/globals.css";
 import type { Metadata } from "next";
 import { Poppins, Roboto, Inter, Urbanist } from "next/font/google";
@@ -46,7 +45,6 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${roboto.variable} ${inter.variable} ${urbanist.variable} antialiased mx-auto max-w-[1440px]`}
       >
-        <RootNav />
         {children}
       </body>
     </html>

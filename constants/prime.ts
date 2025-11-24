@@ -1,4 +1,5 @@
 import { FeatureTileProps } from "@components/FeatureTile";
+import { PriceCardProps } from "@components/landing-page/price-card";
 import { MeritTileProps } from "@components/MeritTile";
 
 export const featureTileInfo: FeatureTileProps[] = [
@@ -37,5 +38,47 @@ export const meritTileInfo: MeritTileProps[] = [
     title: "Simple and understandable interface",
     description:
       "Safety, security and compliance. Buy and sell popular digital currencies, keep track of them in the one place.",
+  },
+];
+
+export const priceCardInfo: PriceCardProps[] = [
+  {
+    headline: "Starter",
+    description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
+    price: 49,
+    frequency: "month",
+    features: [
+      "100+ Blocks",
+      "Free Typography",
+      "Fully Adjustable",
+      "Figma & Sketch",
+      "Support Team",
+    ],
+  },
+  {
+    headline: "Premium",
+    description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
+    price: 89,
+    frequency: "month",
+    features: [
+      "100+ Blocks",
+      "Free Typography",
+      "Fully Adjustable",
+      "Figma & Sketch",
+      "Support Team",
+    ],
+  },
+  {
+    headline: "Unlimited",
+    description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
+    price: 169,
+    frequency: "month",
+    features: [
+      "100+ Blocks",
+      "Free Typography",
+      "Fully Adjustable",
+      "Figma & Sketch",
+      "Support Team",
+    ],
   },
 ];

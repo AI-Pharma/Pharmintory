@@ -1,6 +1,11 @@
 import FeatureTile from "@components/FeatureTile";
+import PriceCard from "@components/landing-page/price-card";
 import MeritTile from "@components/MeritTile";
-import { featureTileInfo, meritTileInfo } from "@constants/prime";
+import {
+  featureTileInfo,
+  meritTileInfo,
+  priceCardInfo,
+} from "@constants/prime";
 import { cn } from "@lib/utils";
 import Image from "next/image";
 
@@ -91,6 +96,22 @@ const Landing = () => {
             description={info.description}
           />
         ))}
+      </section>
+
+      <section className="mt-24 flex flex-col md:flex-row items-center gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+        {priceCardInfo.map(
+          ({ description, features, frequency, headline, price }, idx) => (
+            <PriceCard
+              description={description}
+              features={features}
+              frequency={frequency}
+              headline={headline}
+              price={price}
+              key={headline}
+              lastCard={idx === priceCardInfo.length - 1}
+            />
+          )
+        )}
       </section>
     </main>
   );
