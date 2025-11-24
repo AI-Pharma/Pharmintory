@@ -8,7 +8,6 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -23,7 +22,7 @@ const RootNav = () => {
     { href: "/about", label: "About" },
   ];
   return (
-    <header className="rootNav">
+    <header className="flex px-4 lg:px-[1.875rem] justify-between py-4 lg:py-[1.5625rem] h-[5rem] items-center">
       <div className="flex gap-x-[0.375rem] items-center">
         <Image
           width={37}
@@ -41,10 +40,16 @@ const RootNav = () => {
       </nav>
 
       <div className="hidden md:flex gap-[.9375rem]">
-        <Link href="/login" className="loginButton urbanist-font">
+        <Link
+          href="/login"
+          className="py-2 px-5 bg-[#FEFEEF] font-semibold leading-[1.5rem] tracking-[-0.0158rem] text-base rounded-md urbanist-font"
+        >
           Sign In
         </Link>
-        <Link href="/signup" className="signUpButton urbanist-font">
+        <Link
+          href="/signup"
+          className="py-2 px-5 bg-cyanText text-[#FEFEFE] rounded-md font-medium leading-[1.5rem] tracking-[-0.0158rem] text-base urbanist-font"
+        >
           Sign Up
         </Link>
       </div>

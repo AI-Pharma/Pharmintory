@@ -119,7 +119,7 @@
 
 /* Ensure the sidebar takes full height */
 .sidebar {
-  height: 100vh;
+  height: 100dvh;
 }
 
 .navBar {
@@ -162,14 +162,6 @@
   .filledButton {
     @apply flex py-[0.625rem] px-[1rem] items-center justify-center leading-[1.25rem] font-medium text-[0.875rem] gap-x-[0.5rem] border-[0.0625rem] border-outlinedBtnBorderClr rounded-[0.5rem] bg-cyanText text-white hover:cursor-pointer;
   }
-
-  .signUpButton {
-    @apply flex px-[1.3181rem] py-[.5rem] rounded-[.375rem] text-[#FEFEFE] text-sm font-medium leading-[1.5rem] tracking-[-0.0158rem] text-center hover:cursor-pointer bg-cyanText items-center;
-  }
-
-  .loginButton {
-    @apply flex px-[1.3181rem] py-[.5rem] rounded-[.375rem] text-someBlackColor text-[1rem] font-semibold leading-[1.625rem] tracking-[-0.0181rem] text-right hover:cursor-pointer bg-[#FEFEEF] items-center;
-  }
 }
 
 .monthButton {
@@ -190,10 +182,6 @@
 
 .teamTile {
   @apply flex flex-col pt-[2.9375rem] items-center rounded-[1rem] border-solid;
-}
-
-.rootNav {
-  @apply flex px-4 lg:px-[1.875rem] justify-between py-4 lg:py-[1.5625rem] h-[5rem] items-center;
 }
 
 /*
