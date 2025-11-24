@@ -1,12 +1,15 @@
 import FeatureTile from "@components/FeatureTile";
 import PriceCard from "@components/landing-page/price-card";
+import TestimonialCard from "@components/landing-page/testimonial-card";
 import MeritTile from "@components/MeritTile";
 import {
   featureTileInfo,
   meritTileInfo,
   priceCardInfo,
+  Testimonials,
 } from "@constants/prime";
 import { cn } from "@lib/utils";
+import { actionAsyncStorage } from "@node_modules/next/dist/server/app-render/action-async-storage.external";
 import Link from "@node_modules/next/link";
 import Image from "next/image";
 
@@ -114,7 +117,7 @@ const Landing = () => {
           )
         )}
       </section>
-      <section className="urbanist-font mt-12 flex flex-col md:flex-row items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+      <section className="urbanist-font mt-12 md:mt-0 flex flex-col md:flex-row items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
         <div className="flex flex-col items-center gap-[1.4375rem] mb-[4.25rem]">
           <h3
             className={cn(
@@ -151,6 +154,27 @@ const Landing = () => {
               Learn More
             </Link>
           </div>
+        </div>
+      </section>
+      <section className="urbanist-font flex flex-col items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+        <h3
+          className={cn(
+            "text-someBlackColor text-center urbanist-font font-semibold tracking-[-0.0722rem] md:max-w-md lg:max-w-[720px]",
+            "text-3xl md:text-4xl lg:text-[52px] leading-10 md:leading-12 lg:leading-16"
+          )}
+        >
+          Testimonials
+        </h3>
+        <div className="flex justify-around items-center flex-wrap gap-y-12 gap-x-8">
+          {Testimonials.map(({ name, rating, testimonial, avatarSrc }) => (
+            <TestimonialCard
+              key={name}
+              name={name}
+              rating={rating}
+              testimonial={testimonial}
+              avatarSrc={avatarSrc}
+            />
+          ))}
         </div>
       </section>
     </main>

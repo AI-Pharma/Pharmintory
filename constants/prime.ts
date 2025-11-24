@@ -1,5 +1,6 @@
 import { FeatureTileProps } from "@components/FeatureTile";
 import { PriceCardProps } from "@components/landing-page/price-card";
+import { TestimonialCardProps } from "@components/landing-page/testimonial-card";
 import { MeritTileProps } from "@components/MeritTile";
 
 export const featureTileInfo: FeatureTileProps[] = [
@@ -80,5 +81,29 @@ export const priceCardInfo: PriceCardProps[] = [
       "Figma & Sketch",
       "Support Team",
     ],
+  },
+];
+
+export const Testimonials: TestimonialCardProps[] = [
+  {
+    name: "David Gillroy",
+    testimonial:
+      "Nowadays, it isn’t great uncommon to see lenders rapidly adopting ",
+    rating: 5,
+    avatarSrc: "https://github.com/shadcn.png",
+  },
+  {
+    name: "Kyle Showdole",
+    testimonial:
+      "Nowadays, it isn’t great uncommon to see lenders rapidly adopting ",
+    rating: 5,
+    avatarSrc: "https://github.com/shadcn.png",
+  },
+  {
+    name: "Milla Holland",
+    testimonial:
+      "Nowadays, it isn’t great uncommon to see lenders rapidly adopting ",
+    rating: 5,
+    avatarSrc: "https://github.com/shadcn.png",
   },
 ];
