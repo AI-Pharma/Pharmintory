@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@lib/utils";
 import { usePathname } from "@node_modules/next/navigation";
 import Link from "next/link";

@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import RootNavLink from "./RootNavLinks";
 import Link from "@node_modules/next/link";

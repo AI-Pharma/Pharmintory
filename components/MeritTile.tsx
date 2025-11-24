@@ -14,8 +14,6 @@ const MeritTile: React.FC<MeritTileProps> = ({
   description,
   even,
 }) => {
-  console.log(even);
-
   return (
     <div className="grid md:grid-cols-12 gap-y-24 gap-x-12">
       <div

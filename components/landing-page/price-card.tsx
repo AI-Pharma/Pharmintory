@@ -34,7 +34,7 @@ const PriceCard = ({
             "mt-6 border-2 rounded-md border-cyanText leading-7 tracking-tight font-semibold",
             "flex items-center justify-center py-3 text-cyanText",
             "hover:bg-cyanText hover:text-white hover:cursor-pointer",
-            "transition-all duration-150 delay-75"
+            "transition-all transform-gpu duration-150 delay-75"
           )}
         >
           Choose Plan

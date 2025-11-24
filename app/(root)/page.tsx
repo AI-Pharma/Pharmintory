@@ -113,6 +113,9 @@ const Landing = () => {
           )
         )}
       </section>
+      <section className="mt-24 flex flex-col md:flex-row items-center gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+        Hello
+      </section>
     </main>
   );
 };
