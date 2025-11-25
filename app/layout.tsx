@@ -1,34 +1,34 @@
-import "@styles/globals.css"
+import "@styles/globals.css";
 import type { Metadata } from "next";
 import { Poppins, Roboto, Inter, Urbanist } from "next/font/google";
 
 const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins'
-})
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+});
 
 const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto'
-})
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+});
 
 const inter = Inter({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter'
-})
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 const urbanist = Urbanist({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-urbanist'
-})
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-urbanist",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -42,8 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable} ${inter.variable} ${urbanist.variable} antialiased`}>
-          {children}
+      <body
+        className={`${poppins.variable} ${roboto.variable} ${inter.variable} ${urbanist.variable} antialiased mx-auto max-w-[1440px]`}
+      >
+        {children}
       </body>
     </html>
   );
