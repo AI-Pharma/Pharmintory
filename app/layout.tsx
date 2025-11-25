@@ -1,3 +1,4 @@
+import { Toaster } from "@components/ui/sonner";
 import "@styles/globals.css";
 import type { Metadata } from "next";
 import { Poppins, Roboto, Inter, Urbanist } from "next/font/google";
@@ -46,6 +47,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${roboto.variable} ${inter.variable} ${urbanist.variable} antialiased mx-auto max-w-[1440px]`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );

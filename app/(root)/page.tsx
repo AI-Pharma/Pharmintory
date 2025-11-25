@@ -1,4 +1,5 @@
 import FeatureTile from "@components/FeatureTile";
+import ContactForm from "@components/landing-page/contact-form";
 import PriceCard from "@components/landing-page/price-card";
 import TestimonialCard from "@components/landing-page/testimonial-card";
 import MeritTile from "@components/MeritTile";
@@ -9,7 +10,6 @@ import {
   Testimonials,
 } from "@constants/prime";
 import { cn } from "@lib/utils";
-import { actionAsyncStorage } from "@node_modules/next/dist/server/app-render/action-async-storage.external";
 import Link from "@node_modules/next/link";
 import Image from "next/image";
 
@@ -118,7 +118,7 @@ const Landing = () => {
         )}
       </section>
       <section className="urbanist-font mt-12 md:mt-0 flex flex-col md:flex-row items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
-        <div className="flex flex-col items-center gap-[1.4375rem] mb-[4.25rem]">
+        <div className="flex flex-col items-center gap-[1.4375rem]">
           <h3
             className={cn(
               "text-someBlackColor text-center urbanist-font font-semibold tracking-[-0.0722rem] md:max-w-md lg:max-w-[720px]",
@@ -176,6 +176,27 @@ const Landing = () => {
             />
           ))}
         </div>
+      </section>
+      <section className="urbanist-font flex flex-col items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+        <div className="flex flex-col items-center gap-[1.4375rem]">
+          <h3
+            className={cn(
+              "text-someBlackColor text-center urbanist-font font-semibold tracking-[-0.0722rem] md:max-w-md lg:max-w-[720px]",
+              "text-3xl md:text-4xl lg:text-[52px] leading-10 md:leading-12 lg:leading-16"
+            )}
+          >
+            Let’s Build the Future of Pharma Data Together
+          </h3>
+          <p className="text-[#767676] text-center md:text-xl max-w-[700px] font-medium tracking-[0.36px] leading-relaxed">
+            Our team is here to support you_whether you’re a pharmacist,
+            developer, or a healthcare innovator. Reach out and we’ll get back
+            to you as soon as possible.
+          </p>
+        </div>
+        <ContactForm />
+        <p className="text-center urbanist-font text-sm font-medium">
+          Got questions, suggestions, or partnership inquiries?
+        </p>
       </section>
     </main>
   );
