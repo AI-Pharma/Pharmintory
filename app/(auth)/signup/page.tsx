@@ -42,7 +42,7 @@ const SignUpPage = () => {
                 <span className='capitalize text-authTitleColor text-4xl font-bold leading-[3.5rem] tracking-[-0.045rem] mb-2'>sign up</span>
                 <span className='text-[#90E0EF] text-[16px] leading-[1rem] tracking-[-0.045rem] mb-[1.8125rem]'>Enter your details to further proceed</span>
 
-                {isLoading && <div>Loading pharmacies...</div>}
+                {isLoading && <div className='animate-spin rounded-full bg-cyanText border-t-transparent size-3'/>}
                 {error && <div className="text-red-500">Error: {error}</div>}
 
                 <AuthPharmaDropdownInput
