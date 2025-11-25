@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import AuthInput, { AuthPharmaDropdownInput, PharmacyProperties } from '@components/AuthInput'
+import AuthInput, { AuthDropdownInput, AuthPharmaDropdownInput, PharmacyProperties } from '@components/AuthInput'
 
 const SignUpPage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -55,10 +55,23 @@ const SignUpPage = () => {
                     required={true}
                     hintText='danieljacobs.@abpharmacy.com'
                 />
-                <AuthInput
-                    label='Email'
+                <AuthDropdownInput
+                    label='Employees'
                     required={true}
-                    hintText='danieljacobs.@abpharmacy.com'
+                    hintText='1 - 10 Employees'
+                    options={[
+                        '1 - 5 Employees', '1 - 10 Employees', '1 - 15 Employees', '1 - 20 Employees', 'N/A'
+                    ]}
+                />
+                <AuthDropdownInput
+                    label='Business'
+                    required={true}
+                    hintText='Inventory Management'
+                    options={[
+                        'Inventory Management', 'Business Consultancy & Strategy', 'Investment & Financial Planning',
+                        'Training & Capacity building', 'Marketing, PR or Sponsorship', 'Software Development & Customization',
+                        'Customer Support & Maintenance'
+                    ]}
                 />
             </div>
             <Image
