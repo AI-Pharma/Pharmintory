@@ -1,8 +1,10 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import AuthInput, { AuthDropdownInput, AuthPharmaDropdownInput, PharmacyProperties } from '@components/AuthInput'
+import { FilledButton } from '@components/Buttons'
+import { AuthInput, AuthDropdownInput, AuthPharmaDropdownInput, PharmacyProperties } from '@components/AuthInput'
 
 const SignUpPage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -37,10 +39,10 @@ const SignUpPage = () => {
             })
     }, [])
     return (
-        <main className='flex pl-[16.625rem] pr-[6.375rem] gap-[15.5rem] pt-[6rem] items-center justify-center'>
-            <div className='flex flex-col items-start w-[25.625rem]'>
-                <span className='capitalize text-authTitleColor text-4xl font-bold leading-[3.5rem] tracking-[-0.045rem] mb-2'>sign up</span>
-                <span className='text-[#90E0EF] text-[16px] leading-[1rem] tracking-[-0.045rem] mb-[1.8125rem]'>Enter your details to further proceed</span>
+        <main className='flex pl-[266px] pr-[102px] gap-[248px] pt-[96px] items-center justify-center mb-[12.5rem]'>
+            <div className='flex flex-col items-start w-[410px]'>
+                <span className='capitalize text-authTitleColor text-4xl font-bold leading-[56px] tracking-[-0.72px] mb-2'>sign up</span>
+                <span className='text-[#90E0EF] text-[1rem] leading-[16px] tracking-[-0.72px] mb-[29px]'>Enter your details to further proceed</span>
 
                 {isLoading && <div className='animate-spin rounded-full bg-cyanText border-t-transparent size-3'/>}
                 {error && <div className="text-red-500">Error: {error}</div>}
@@ -73,11 +75,16 @@ const SignUpPage = () => {
                         'Customer Support & Maintenance'
                     ]}
                 />
+                <FilledButton
+                    label='Continue'
+                    className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
+                />
+                <span className='text-sm leading-[1.625rem] tracking-[-0.0175rem] text-authTitleColor'>Already registered? <Link href='/login' className='font-bold text-cyanText'>Sign into your account</Link></span>
             </div>
             <Image
                 width={689.999}
                 height={528.434}
-                className='z-[-1] size-[35rem]'
+                className='z-[-1] size-[560px]'
                 src='/images/auth/sign_up.png'
                 alt='decorative image for sign up page'
             />
