@@ -14,7 +14,7 @@ const socialIcons: string[] = [
   "/svgs/social-icons/facebook.svg",
 ];
 
-const FeaturesPage = () => {
+const Features_Page = () => {
   return (
     <main className="flex flex-col inter-font py-[48px] lg:py-[60px] px-4 md:px-[30px] gap-y-[72px] lg:gap-y-36">
       <section className="grid grid-cols-1 lg:grid-cols-11 gap-x-10 poppins-font gap-y-10">
@@ -113,4 +113,4 @@ const FeaturesPage = () => {
   );
 };
 
-export default FeaturesPage;
+export default Features_Page;

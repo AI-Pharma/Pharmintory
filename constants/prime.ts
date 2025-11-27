@@ -112,6 +112,48 @@ export const priceCardInfo: PriceCardProps[] = [
   },
 ];
 
+export const yearly_packages: PriceCardProps[] = [
+  {
+    headline: "Starter",
+    description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
+    price: 49,
+    frequency: "year",
+    features: [
+      "100+ Blocks",
+      "Free Typography",
+      "Fully Adjustable",
+      "Figma & Sketch",
+      "Support Team",
+    ],
+  },
+  {
+    headline: "Premium",
+    description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
+    price: 89,
+    frequency: "year",
+    features: [
+      "100+ Blocks",
+      "Free Typography",
+      "Fully Adjustable",
+      "Figma & Sketch",
+      "Support Team",
+    ],
+  },
+  {
+    headline: "Unlimited",
+    description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
+    price: 169,
+    frequency: "year",
+    features: [
+      "100+ Blocks",
+      "Free Typography",
+      "Fully Adjustable",
+      "Figma & Sketch",
+      "Support Team",
+    ],
+  },
+];
+
 export const Testimonials: TestimonialCardProps[] = [
   {
     name: "David Gillroy",

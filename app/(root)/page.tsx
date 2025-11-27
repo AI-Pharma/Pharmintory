@@ -79,13 +79,8 @@ const Landing = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 justify-center">
-          {featureTileInfo.map((info, index) => (
-            <FeatureTile
-              key={index}
-              icon={info.icon}
-              text={info.text}
-              href={info.href}
-            />
+          {featureTileInfo.map(({ href, icon, text }, index) => (
+            <FeatureTile key={index} icon={icon} text={text} href={href} />
           ))}
         </div>
       </section>
