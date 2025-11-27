@@ -113,6 +113,10 @@
   font-family: var(--font-urbanist);
 }
 
+.poppins-font {
+  font-family: var(--font-poppins);
+}
+
 .page-content {
   @apply flex-1 overflow-auto;
 }

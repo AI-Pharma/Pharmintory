@@ -25,7 +25,7 @@ const MeritTile: React.FC<MeritTileProps> = ({
         <div className="relative flex items-center justify-center">
           <div
             className={cn(
-              "z-10 absolute h-[380px] lg:h-[490px] w-[70%] rounded-3xl",
+              "z-10 absolute h-[360px] sm:h-[560px] md:h-[380px] lg:h-[490px] w-[70%] rounded-3xl",
               even ? "bg-[#E8FAFE]" : "bg-[#C3D5FF]"
             )}
           ></div>
@@ -36,7 +36,7 @@ const MeritTile: React.FC<MeritTileProps> = ({
               height={1000}
               quality={100}
               alt="image of the application"
-              className=" max-h-[360px] w-auto"
+              className="max-h-[360px] w-auto"
             />
           </div>
         </div>

@@ -15,7 +15,7 @@ import Image from "next/image";
 
 const Landing = () => {
   return (
-    <main className="flex flex-col items-center inter-font gap-y-8 py-[30px] md:py-[48px] lg:py-[60px]">
+    <main className="flex flex-col items-center inter-font gap-y-[72px] lg:gap-y-36 py-[30px] md:py-[48px] lg:py-[60px]">
       {/* Hero Section */}
       <section className="flex items-center justify-center flex-col gap-y-[1rem] md:gap-y-[2rem] px-4 md:px-[30px] w-full">
         <div className="flex flex-col md:w-lg lg:w-[39.6875rem] items-center gap-y-4 lg:gap-[1.4375rem]">
@@ -63,8 +63,8 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="flex flex-col pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
-        <div className="flex flex-col items-center gap-[1.4375rem] mb-[4.25rem]">
+      <section className="flex flex-col px-4 md:px-[30px] gap-y-9">
+        <div className="flex flex-col items-center gap-[1.4375rem]">
           <h3 className="text-center text-2xl font-semibold leading-[2.125rem] tracking-[-0.0271rem] text-cyanText urbanist-font capitalize">
             Long Headline Sample
           </h3>
@@ -90,7 +90,7 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="mt-24 flex flex-col gap-y-48 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+      <section className="my-16 flex flex-col gap-y-48 px-4 md:px-[30px]">
         {meritTileInfo.map((info, index) => (
           <MeritTile
             key={index}
@@ -102,7 +102,7 @@ const Landing = () => {
         ))}
       </section>
 
-      <section className="mt-24 flex flex-col md:flex-row items-center gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+      <section className="flex flex-col md:flex-row items-center gap-y-12 gap-x-20 px-4 md:px-[30px]">
         {priceCardInfo.map(
           ({ description, features, frequency, headline, price }, idx) => (
             <PriceCard
@@ -117,7 +117,8 @@ const Landing = () => {
           )
         )}
       </section>
-      <section className="urbanist-font mt-12 md:mt-0 flex flex-col md:flex-row items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+
+      <section className="urbanist-font flex flex-col md:flex-row items-center gap-y-6 md:gap-y-12 gap-x-20 px-4 md:px-[30px]">
         <div className="flex flex-col items-center gap-[1.4375rem]">
           <h3
             className={cn(
@@ -156,7 +157,8 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className="urbanist-font flex flex-col items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+
+      <section className="urbanist-font flex flex-col items-center gap-y-6 md:gap-y-12 gap-x-20 px-4 md:px-[30px]">
         <h3
           className={cn(
             "text-someBlackColor text-center urbanist-font font-semibold tracking-[-0.0722rem] md:max-w-md lg:max-w-[720px]",
@@ -177,7 +179,8 @@ const Landing = () => {
           ))}
         </div>
       </section>
-      <section className="urbanist-font flex flex-col items-center gap-y-6 md:gap-y-12 gap-x-20 pt-[30px] md:pt-[48px] lg:pt-[60px] px-4 md:px-[30px]">
+
+      <section className="urbanist-font flex flex-col items-center gap-y-6 md:gap-y-12 gap-x-20 px-4 md:px-[30px]">
         <div className="flex flex-col items-center gap-[1.4375rem]">
           <h3
             className={cn(
