@@ -1,3 +1,4 @@
+import { About_Details_Props } from "@components/about-us/about-details";
 import { Feature_Tile_Props } from "@components/feature-page/feature-tile";
 import { FeatureTileProps } from "@components/FeatureTile";
 import { PriceCardProps } from "@components/landing-page/price-card";
@@ -196,5 +197,47 @@ export const more_feature_merit_tile_info: Feature_Tile_Props[] = [
     description:
       "Have any questions? Access the best help service through our help centres and contact our help desk for any other issues.",
     title: "Help & Support",
+  },
+];
+
+export const about_us_details: About_Details_Props[] = [
+  {
+    title: "Innovation",
+    imageSrc: "/svgs/about-us/innovation.svg",
+    description:
+      "We combine technology and healthcare expertise to modernize how pharmaceutical data is handled",
+  },
+  {
+    title: "Intergrity",
+    imageSrc: "/svgs/about-us/intergrity.svg",
+    description:
+      "Data privacy and ethical handling are at the core of our system.",
+  },
+  {
+    title: "Collaboration",
+    imageSrc: "/svgs/about-us/collaboration.svg",
+    description:
+      "Built to empower pharmacists, researchers, and medical teams to work seamlessly together.",
+  },
+];
+
+export const community_details: About_Details_Props[] = [
+  {
+    title: "Discussion Forums",
+    imageSrc: "/svgs/about-us/discussion.svg",
+    description:
+      "Share ideas, get feedback, and exchange pharmaceutical insights.",
+  },
+  {
+    title: "Knowledge Hub",
+    imageSrc: "/svgs/about-us/knowledge.svg",
+    description:
+      "Access verified resources, tutorials, and guides on data management.",
+  },
+  {
+    title: "Community Events",
+    imageSrc: "/svgs/about-us/collaboration.svg",
+    description:
+      "Join monthly webinars and virtual meetups on healthcare innovation.",
   },
 ];

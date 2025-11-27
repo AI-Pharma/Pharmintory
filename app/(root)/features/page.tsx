@@ -8,7 +8,7 @@ import {
 import Image from "@node_modules/next/image";
 import { FaStar } from "@node_modules/react-icons/fa";
 
-const socialIcons: string[] = [
+export const socialIcons: string[] = [
   "/svgs/social-icons/google.svg",
   "/svgs/social-icons/linkedin.svg",
   "/svgs/social-icons/facebook.svg",
