@@ -1,5 +1,5 @@
-import PriceCard from "@components/landing-page/price-card";
-import { priceCardInfo, yearly_packages } from "@constants/prime";
+import Price_Card from "@components/landing-page/price-card";
+import { price_card_info, yearly_packages } from "@constants/prime";
 import { cn } from "@lib/utils";
 import Image from "@node_modules/next/image";
 import Link from "@node_modules/next/link";
@@ -50,16 +50,16 @@ const Pricing_Page = () => {
           Monthly Packages
         </h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-20">
-          {priceCardInfo.map(
+          {price_card_info.map(
             ({ description, features, frequency, headline, price }, idx) => (
-              <PriceCard
+              <Price_Card
                 description={description}
                 features={features}
                 frequency={frequency}
                 headline={headline}
                 price={price}
                 key={headline}
-                lastCard={idx === priceCardInfo.length - 1}
+                lastCard={idx === price_card_info.length - 1}
               />
             )
           )}
@@ -73,14 +73,14 @@ const Pricing_Page = () => {
         <div className="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-20">
           {yearly_packages.map(
             ({ description, features, frequency, headline, price }, idx) => (
-              <PriceCard
+              <Price_Card
                 description={description}
                 features={features}
                 frequency={frequency}
                 headline={headline}
                 price={price}
                 key={headline}
-                lastCard={idx === priceCardInfo.length - 1}
+                lastCard={idx === yearly_packages.length - 1}
               />
             )
           )}

@@ -1,12 +1,16 @@
 import Image from "@node_modules/next/image";
 
-export interface Feature_Tile_Props {
+export interface More_Feature_Tile_Props {
   image: string;
   title: string;
   description: string;
 }
 
-const Feature_Tile = ({ image, description, title }: Feature_Tile_Props) => {
+const More_Feature_Tile = ({
+  image,
+  description,
+  title,
+}: More_Feature_Tile_Props) => {
   return (
     <div className="flex flex-col gap-y-12 urbanist-font">
       <Image
@@ -25,4 +29,4 @@ const Feature_Tile = ({ image, description, title }: Feature_Tile_Props) => {
   );
 };
 
-export default Feature_Tile;
+export default More_Feature_Tile;

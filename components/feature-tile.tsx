@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export interface FeatureTileProps {
+export interface Feature_Tile_Props {
   icon: string;
   text: string;
   href: string;
 }
 
-const FeatureTile: React.FC<FeatureTileProps> = ({ icon, text, href }) => {
+const Feature_Tile: React.FC<Feature_Tile_Props> = ({ icon, text, href }) => {
   return (
     <div className="grid grid-cols-1 gap-y-6 max-w-xs">
       <div className="flex items-center justify-center">
@@ -31,4 +31,4 @@ const FeatureTile: React.FC<FeatureTileProps> = ({ icon, text, href }) => {
   );
 };
 
-export default FeatureTile;
+export default Feature_Tile;

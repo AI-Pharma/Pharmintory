@@ -1,13 +1,13 @@
-import FeatureTile from "@components/FeatureTile";
-import ContactForm from "@components/landing-page/contact-form";
-import PriceCard from "@components/landing-page/price-card";
-import TestimonialCard from "@components/landing-page/testimonial-card";
-import MeritTile from "@components/MeritTile";
+import Feature_Tile from "@components/feature-tile";
+import Contact_Form from "@components/landing-page/contact-form";
+import Price_Card from "@components/landing-page/price-card";
+import Testimonial_Card from "@components/landing-page/testimonial-card";
+import Merit_Tile from "@components/merit-tile";
 import {
-  featureTileInfo,
-  meritTileInfo,
-  priceCardInfo,
-  Testimonials,
+  feature_tile_info,
+  merit_tile_info,
+  price_card_info,
+  testimonials,
 } from "@constants/prime";
 import { cn } from "@lib/utils";
 import Link from "@node_modules/next/link";
@@ -79,15 +79,15 @@ const Landing = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 justify-center">
-          {featureTileInfo.map(({ href, icon, text }, index) => (
-            <FeatureTile key={index} icon={icon} text={text} href={href} />
+          {feature_tile_info.map(({ href, icon, text }, index) => (
+            <Feature_Tile key={index} icon={icon} text={text} href={href} />
           ))}
         </div>
       </section>
 
       <section className="my-16 flex flex-col gap-y-48 px-4 md:px-[30px]">
-        {meritTileInfo.map((info, index) => (
-          <MeritTile
+        {merit_tile_info.map((info, index) => (
+          <Merit_Tile
             key={index}
             image={info.image}
             title={info.title}
@@ -98,16 +98,16 @@ const Landing = () => {
       </section>
 
       <section className="flex flex-col md:flex-row items-center gap-y-12 gap-x-20 px-4 md:px-[30px]">
-        {priceCardInfo.map(
+        {price_card_info.map(
           ({ description, features, frequency, headline, price }, idx) => (
-            <PriceCard
+            <Price_Card
               description={description}
               features={features}
               frequency={frequency}
               headline={headline}
               price={price}
               key={headline}
-              lastCard={idx === priceCardInfo.length - 1}
+              lastCard={idx === price_card_info.length - 1}
             />
           )
         )}
@@ -163,8 +163,8 @@ const Landing = () => {
           Testimonials
         </h3>
         <div className="flex justify-around items-center flex-wrap gap-y-12 gap-x-8">
-          {Testimonials.map(({ name, rating, testimonial, avatarSrc }) => (
-            <TestimonialCard
+          {testimonials.map(({ name, rating, testimonial, avatarSrc }) => (
+            <Testimonial_Card
               key={name}
               name={name}
               rating={rating}
@@ -191,7 +191,7 @@ const Landing = () => {
             to you as soon as possible.
           </p>
         </div>
-        <ContactForm />
+        <Contact_Form />
         <p className="text-center urbanist-font text-sm font-medium">
           Got questions, suggestions, or partnership inquiries?
         </p>

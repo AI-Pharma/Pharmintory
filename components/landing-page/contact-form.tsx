@@ -26,7 +26,7 @@ const formSchema = z.object({
     .min(10, { message: "Invalid phone" })
     .max(10, { message: "Invalid phone" }),
 });
-const ContactForm = () => {
+const Contact_Form = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -131,4 +131,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default Contact_Form;

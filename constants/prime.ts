@@ -1,11 +1,11 @@
 import { About_Details_Props } from "@components/about-us/about-details";
-import { Feature_Tile_Props } from "@components/feature-page/feature-tile";
-import { FeatureTileProps } from "@components/FeatureTile";
-import { PriceCardProps } from "@components/landing-page/price-card";
-import { TestimonialCardProps } from "@components/landing-page/testimonial-card";
-import { MeritTileProps } from "@components/MeritTile";
+import { More_Feature_Tile_Props } from "@components/feature-page/feature-tile";
+import { Feature_Tile_Props } from "@components/feature-tile";
+import { Price_Card_Props } from "@components/landing-page/price-card";
+import { Testimonial_Card_Props } from "@components/landing-page/testimonial-card";
+import { Merit_Tile_Props } from "@components/merit-tile";
 
-export const featureTileInfo: FeatureTileProps[] = [
+export const feature_tile_info: Feature_Tile_Props[] = [
   {
     icon: "/svgs/grid.svg",
     text: "Find what you need instantly through search by drug name, category and selling price with advanced filters",
@@ -23,28 +23,28 @@ export const featureTileInfo: FeatureTileProps[] = [
   },
 ];
 
-export const meritTileInfo: MeritTileProps[] = [
+export const merit_tile_info: Merit_Tile_Props[] = [
   {
-    image: "/images/demo_1.png",
+    image: "/svgs/landing-page/easy.svg",
     title: "Easy to understand breakdown of work",
     description:
       "Buy and sell popular digital currencies, keep track of them in the one place. Has a variety of features that make it the best place to start trading",
   },
   {
-    image: "/images/demo_2.png",
+    image: "/svgs/landing-page/well.svg",
     title: "Well detailed stock list",
     description:
       "The Exchange supports USD, EUR, and GBP. Invest in cryptocurrency slowly over time by scheduling buys daily, weekly, or monthly.",
   },
   {
-    image: "/images/demo_3.png",
+    image: "/svgs/landing-page/simple.svg",
     title: "Simple and understandable interface",
     description:
       "Safety, security and compliance. Buy and sell popular digital currencies, keep track of them in the one place.",
   },
 ];
 
-export const feature_merit_tile_info: MeritTileProps[] = [
+export const feature_merit_tile_info: Merit_Tile_Props[] = [
   {
     image: "/svgs/features-page/dashboard.svg",
     title: "Dashboard Insights",
@@ -71,7 +71,7 @@ export const feature_merit_tile_info: MeritTileProps[] = [
   },
 ];
 
-export const priceCardInfo: PriceCardProps[] = [
+export const price_card_info: Price_Card_Props[] = [
   {
     headline: "Starter",
     description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
@@ -113,7 +113,7 @@ export const priceCardInfo: PriceCardProps[] = [
   },
 ];
 
-export const yearly_packages: PriceCardProps[] = [
+export const yearly_packages: Price_Card_Props[] = [
   {
     headline: "Starter",
     description: "Nowadays, it isn’t uncommon to see lenders rapidly adopting",
@@ -155,31 +155,31 @@ export const yearly_packages: PriceCardProps[] = [
   },
 ];
 
-export const Testimonials: TestimonialCardProps[] = [
+export const testimonials: Testimonial_Card_Props[] = [
   {
     name: "David Gillroy",
     testimonial:
       "Nowadays, it isn’t great uncommon to see lenders rapidly adopting ",
     rating: 5,
-    avatarSrc: "https://github.com/shadcn.png",
+    avatarSrc: "/images/avatar.png",
   },
   {
     name: "Kyle Showdole",
     testimonial:
       "Nowadays, it isn’t great uncommon to see lenders rapidly adopting ",
     rating: 5,
-    avatarSrc: "https://github.com/shadcn.png",
+    avatarSrc: "/images/avatar.png",
   },
   {
     name: "Milla Holland",
     testimonial:
       "Nowadays, it isn’t great uncommon to see lenders rapidly adopting ",
     rating: 5,
-    avatarSrc: "https://github.com/shadcn.png",
+    avatarSrc: "/images/avatar.png",
   },
 ];
 
-export const more_feature_merit_tile_info: Feature_Tile_Props[] = [
+export const more_feature_merit_tile_info: More_Feature_Tile_Props[] = [
   {
     image: "/images/features-page/demo.png",
     description:

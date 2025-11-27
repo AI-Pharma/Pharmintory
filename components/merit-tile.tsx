@@ -1,14 +1,14 @@
 import { cn } from "@lib/utils";
 import Image from "next/image";
 
-export interface MeritTileProps {
+export interface Merit_Tile_Props {
   image: string;
   title: string;
   even?: boolean;
   description: string;
 }
 
-const MeritTile: React.FC<MeritTileProps> = ({
+const Merit_Tile: React.FC<Merit_Tile_Props> = ({
   image,
   title,
   description,
@@ -57,4 +57,4 @@ const MeritTile: React.FC<MeritTileProps> = ({
   );
 };
 
-export default MeritTile;
+export default Merit_Tile;

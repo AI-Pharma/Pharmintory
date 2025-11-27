@@ -1,5 +1,6 @@
-import Feature_Tile from "@components/feature-page/feature-tile";
-import MeritTile from "@components/MeritTile";
+import More_Feature_Tile from "@components/feature-page/feature-tile";
+import Merit_Tile from "@components/merit-tile";
+
 import { Button } from "@components/ui/button";
 import {
   feature_merit_tile_info,
@@ -85,7 +86,7 @@ const Features_Page = () => {
 
       <section className="my-16 flex flex-col items-center gap-y-48">
         {feature_merit_tile_info.map(({ description, image, title }, index) => (
-          <MeritTile
+          <Merit_Tile
             key={title}
             image={image}
             title={title}
@@ -100,7 +101,7 @@ const Features_Page = () => {
         <h3 className="font-semibold text-3xl md:text-5xl">Other Features</h3>
         <div className="max-w-[1150px] grid md:grid-cols-3 gap-12">
           {more_feature_merit_tile_info.map(({ description, image, title }) => (
-            <Feature_Tile
+            <More_Feature_Tile
               key={title}
               image={image}
               description={description}
