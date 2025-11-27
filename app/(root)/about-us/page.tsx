@@ -21,7 +21,7 @@ const About_Us_Page = () => {
 
             {/* Hero Headline */}
 
-            <h2 className="text-5xl sm:text-[56px] font-bold leading-[72px] text-someBlackColor">
+            <h2 className="text-4xl sm:text-[56px] font-bold leading-12 sm:leading-[72px] text-someBlackColor">
               Redifining Pharmaceutical Data Management
             </h2>
 
