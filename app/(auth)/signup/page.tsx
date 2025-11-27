@@ -2,55 +2,21 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import { FilledButton } from '@components/Buttons'
-import { AuthInput, AuthDropdownInput, AuthPharmaDropdownInput, PharmacyProperties } from '@components/AuthInput'
+import AuthPharmaDropdownInput from '@components/AuthInputs/AuthPharmaDropdownInput'
+import AuthInput from '@components/AuthInputs/AuthInput'
+import AuthDropdownInput from '@components/AuthInputs/AuthDropdownInput'
 
 const SignUpPage = () => {
-    const [isLoading, setIsLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
-    const [pharmacies, setPharmacies] = useState<PharmacyProperties[]>([])
-
-    useEffect(() => {
-        setIsLoading(true)
-        setError(null)
-        fetch('https://ai-pharma-f8a3.onrender.com/pharmacies')
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error(`Failed to fetch: ${res.status}`)
-                }
-                return res.json()
-            })
-            .then((data: Array<PharmacyProperties>) => {
-                console.log('API data received:', data)
-                const result = data.map((pharmacyInfo) => ({
-                    name: pharmacyInfo.name,
-                    region: pharmacyInfo.region,
-                    location: pharmacyInfo.location
-                }))
-                setPharmacies(result)
-            })
-            .catch((error) => {
-                console.error('Fetch error:', error)
-                setError(error.message)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
-    }, [])
     return (
         <main className='flex pl-[266px] pr-[102px] gap-[248px] pt-[96px] items-center justify-center mb-[12.5rem]'>
             <div className='flex flex-col items-start w-[410px]'>
                 <span className='capitalize text-authTitleColor text-4xl font-bold leading-[56px] tracking-[-0.72px] mb-2'>sign up</span>
                 <span className='text-[#90E0EF] text-[1rem] leading-[16px] tracking-[-0.72px] mb-[29px]'>Enter your details to further proceed</span>
 
-                {isLoading && <div className='animate-spin rounded-full bg-cyanText border-t-transparent size-3'/>}
-                {error && <div className="text-red-500">Error: {error}</div>}
-
                 <AuthPharmaDropdownInput
                     label='Pharmacy'
                     required={true}
-                    options={pharmacies}
                 />
                 <AuthInput
                     label='Email'

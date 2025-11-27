@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { FilledButton } from '@components/Buttons'
-import { AuthInput, AuthPasswordInput } from '@components/AuthInput'
+import AuthInput from '@components/AuthInputs/AuthInput'
+import AuthPasswordInput from '@components/AuthInputs/AuthPasswordInput'
 
 const SignInPage = () => {
 
