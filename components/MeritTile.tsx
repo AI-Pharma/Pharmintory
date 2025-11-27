@@ -29,7 +29,7 @@ const MeritTile: React.FC<MeritTileProps> = ({
               even ? "bg-[#E8FAFE]" : "bg-[#C3D5FF]"
             )}
           ></div>
-          <div className="z-20 flex items-center justify-center px-4 py-4 bg-black rounded-[20px]">
+          <div className="z-20 flex items-center justify-center">
             <Image
               width={1000}
               src={image}

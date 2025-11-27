@@ -15,7 +15,7 @@ import Image from "next/image";
 
 const Landing = () => {
   return (
-    <main className="flex flex-col items-center inter-font gap-y-[72px] lg:gap-y-36 py-[30px] md:py-[48px] lg:py-[60px]">
+    <main className="flex flex-col items-center inter-font gap-y-[72px] lg:gap-y-36 py-[48px] lg:py-[60px]">
       {/* Hero Section */}
       <section className="flex items-center justify-center flex-col gap-y-[1rem] md:gap-y-[2rem] px-4 md:px-[30px] w-full">
         <div className="flex flex-col md:w-lg lg:w-[39.6875rem] items-center gap-y-4 lg:gap-[1.4375rem]">

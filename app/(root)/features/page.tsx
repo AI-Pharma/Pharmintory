@@ -1,4 +1,10 @@
+import Feature_Tile from "@components/feature-page/feature-tile";
+import MeritTile from "@components/MeritTile";
 import { Button } from "@components/ui/button";
+import {
+  feature_merit_tile_info,
+  more_feature_merit_tile_info,
+} from "@constants/prime";
 import Image from "@node_modules/next/image";
 import { FaStar } from "@node_modules/react-icons/fa";
 
@@ -10,9 +16,9 @@ const socialIcons: string[] = [
 
 const FeaturesPage = () => {
   return (
-    <main className="flex flex-col inter-font py-[30px] md:py-[48px] lg:py-[60px] px-4 md:px-[30px] gap-y-8 md:gap-y-12 lg:gap-y-[60px]">
-      <section className="grid grid-cols-11 gap-x-10 poppins-font">
-        <div className="col-span-5 flex flex-col justify-between">
+    <main className="flex flex-col inter-font py-[48px] lg:py-[60px] px-4 md:px-[30px] gap-y-[72px] lg:gap-y-36">
+      <section className="grid grid-cols-1 lg:grid-cols-11 gap-x-10 poppins-font gap-y-10">
+        <div className="lg:col-span-5 flex flex-col justify-between gap-y-6 lg:gap-y-10 xl:gap-y-40">
           <div className="flex flex-col gap-y-6">
             {/* Tiny Button */}
             <div className="flex items-center p-2.5 gap-2.5 rounded-full bg-cyanText w-fit urbanist-font">
@@ -24,13 +30,13 @@ const FeaturesPage = () => {
 
             {/* Hero Headline */}
 
-            <h2 className="text-[58px] font-bold leading-[72px] text-someBlackColor">
+            <h2 className="text-5xl sm:text-[58px] font-bold leading-[72px] text-someBlackColor">
               Designed for Pharmacists, Built for Precision.
             </h2>
 
             {/* Hero Description */}
 
-            <p className="text-xl font-medium max-w-[468px] text-[#767676]">
+            <p className="text-xl font-medium max-w-[468px] leading-normal text-[#767676]">
               Nowadays, it isn’t uncommon to see lenders rapidly adopting a
               digital lending strategy to streamline the lending process
             </p>
@@ -63,15 +69,44 @@ const FeaturesPage = () => {
             ))}
           </div>
         </div>
-        <div className="col-span-6">
+        <div className="lg:col-span-6 flex justify-center lg:justify-end items-center">
           <Image
             alt="Hero Image"
             src={"/images/heroes/features-hero.png"}
             height={1000}
             width={1000}
             quality={100}
-            className="w-auto h-auto max-h-[815px]"
+            className="w-full lg:w-auto h-full lg:max-h-[600px] xl:max-h-[800px]"
           />
+        </div>
+      </section>
+
+      {/* Features Section */}
+
+      <section className="my-16 flex flex-col items-center gap-y-48">
+        {feature_merit_tile_info.map(({ description, image, title }, index) => (
+          <MeritTile
+            key={title}
+            image={image}
+            title={title}
+            even={(index + 1) % 2 === 0}
+            description={description}
+          />
+        ))}
+      </section>
+
+      {/* Other Features Section */}
+      <section className="flex flex-col items-center gap-y-8 poppins-font">
+        <h3 className="font-semibold text-3xl md:text-5xl">Other Features</h3>
+        <div className="max-w-[1150px] grid md:grid-cols-3 gap-12">
+          {more_feature_merit_tile_info.map(({ description, image, title }) => (
+            <Feature_Tile
+              key={title}
+              image={image}
+              description={description}
+              title={title}
+            />
+          ))}
         </div>
       </section>
     </main>
