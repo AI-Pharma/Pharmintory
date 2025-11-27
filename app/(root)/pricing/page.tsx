@@ -42,8 +42,11 @@ const Pricing_Page = () => {
       </section>
 
       {/* Monthly Packages */}
-      <section className="max-w-[1180px] mx-auto flex flex-col items-center gap-y-10">
-        <h2 className="w-full text-start poppins-font font-medium text-5xl tracking-tight">
+      <section
+        id="pricing-plans"
+        className="max-w-[1180px] mx-auto flex flex-col items-center gap-y-10"
+      >
+        <h2 className="w-full text-start poppins-font font-medium text-5xl tracking-tight leading-tight">
           Monthly Packages
         </h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-20">
@@ -64,7 +67,7 @@ const Pricing_Page = () => {
       </section>
       {/* Yearly Packages */}
       <section className="max-w-[1180px] mx-auto flex flex-col items-center gap-y-10">
-        <h2 className="w-full text-start poppins-font font-medium text-5xl tracking-tight">
+        <h2 className="w-full text-start poppins-font font-medium text-5xl tracking-tight leading-tight">
           Yearly Packages
         </h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-20">
