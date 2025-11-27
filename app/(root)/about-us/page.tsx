@@ -4,6 +4,8 @@ import { Button } from "@components/ui/button";
 import { FaStar } from "@node_modules/react-icons/fa";
 import About_Details from "@components/about-us/about-details";
 import { about_us_details, community_details } from "@constants/prime";
+import Contact_Form from "@components/landing-page/contact-form";
+import { cn } from "@lib/utils";
 
 const About_Us_Page = () => {
   return (
@@ -75,14 +77,14 @@ const About_Us_Page = () => {
       {/* About Us */}
       <section className="grid lg:grid-cols-11 gap-14 poppins-font">
         <div className="lg:col-span-6 flex flex-col justify-center gap-y-5">
-          <h2 className="text-5xl font-semibold leading-[72px] text-someBlackColor">
+          <h2 className="text-4xl md:text-5xl font-semibold leading-[72px] text-someBlackColor">
             About Us
           </h2>
           <p className="max-w-[700px] leading-relaxed">
             We’re a team of innovators, pharmacists, and developers dedicated to
             improving how medical information is collected and managed. Our
             platform simplifies data organisation for pharmaceutical
-            professionals_ensuring accuracy, consistency, and accessibility.
+            professionals ensuring accuracy, consistency, and accessibility.
             With a secure infrastructure and intuitive design, we aim to make
             data management effortless, so you can focus on what matters most:
             better healthcare outcomes.
@@ -125,13 +127,13 @@ const About_Us_Page = () => {
 
       <section className="grid lg:grid-cols-11 gap-14 poppins-font">
         <div className="lg:col-span-6 flex flex-col justify-center gap-y-5 order-0 lg:order-2">
-          <h2 className="text-5xl font-semibold leading-[72px] text-someBlackColor">
+          <h2 className="text-4xl md:text-5xl font-semibold leading-[72px] text-someBlackColor">
             Our Community
           </h2>
           <p className="max-w-[700px] leading-relaxed">
             Connect wit other pharmacists, data specialists, and healthcare
             innovators sharing insights and best practices. Our community is
-            where knowledge meets collaboration_helping each other improve drug
+            where knowledge meets collaboration helping each other improve drug
             data accuracy and healthcare systems nationwide.
           </p>
           <div className="flex flex-col gap-y-4">
@@ -155,6 +157,71 @@ const About_Us_Page = () => {
             className="w-full h-auto"
           />
         </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="flex flex-col gap-14 poppins-font">
+        <div className="flex flex-col justify-center gap-y-5">
+          <h2 className="text-4xl md:text-5xl font-semibold leading-[72px] text-someBlackColor">
+            Why Choose Us
+          </h2>
+          <p className="max-w-[602px] text-[#767676] leading-relaxed">
+            With every feature we design, we aim to make pharmaceutical data
+            management faster, smarter, and safer_for everyone. Our goal is to
+            empower pharmacists with reliable, data-driven tools that improve
+            accuracy, compliance, and collaboration.
+          </p>
+        </div>
+        <div className="grid grid-cols-3 gap-x-8 max-w-[1288px] mx-auto">
+          <div className="flex flex-col gap-y-6 p-8 bg-cyanText/20 rounded-md">
+            <div className="flex justify-between items-center">
+              <h5>Our Vision</h5>
+              <div className="">Icon</div>
+            </div>
+            <p className="text-sm">
+              To create a unified, transparent digital space for pharmaceutical
+              knowledge.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="flex justify-center items-center relative poppins-font">
+        <h3 className="absolute font-semibold text-2xl sm:text-5xl flex justify-center items-center text-center">
+          Meet the Team
+        </h3>
+        <Image
+          src={"/images/about-us/team.png"}
+          alt="Team"
+          height={788}
+          width={1288}
+          quality={100}
+          className="w-full h-auto max-h-[788px]"
+        />
+      </section>
+
+      {/* Contact Us Section */}
+      <section className="urbanist-font flex flex-col items-center gap-y-6 md:gap-y-12 gap-x-20 px-4 md:px-[30px]">
+        <div className="flex flex-col items-center gap-[1.4375rem]">
+          <h3
+            className={cn(
+              "text-someBlackColor text-center urbanist-font font-semibold tracking-[-0.0722rem] md:max-w-md lg:max-w-[720px]",
+              "text-3xl md:text-4xl lg:text-[52px] leading-10 md:leading-12 lg:leading-16"
+            )}
+          >
+            Let’s Build the Future of Pharma Data Together
+          </h3>
+          <p className="text-[#767676] text-center md:text-xl max-w-[700px] font-medium tracking-[0.36px] leading-relaxed">
+            Our team is here to support you_whether you’re a pharmacist,
+            developer, or a healthcare innovator. Reach out and we’ll get back
+            to you as soon as possible.
+          </p>
+        </div>
+        <Contact_Form />
+        <p className="text-center urbanist-font text-sm font-medium">
+          Got questions, suggestions, or partnership inquiries?
+        </p>
       </section>
     </main>
   );
