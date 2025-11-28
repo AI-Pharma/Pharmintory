@@ -3,9 +3,14 @@ import { socialIcons } from "../features/page";
 import { Button } from "@components/ui/button";
 import { FaStar } from "@node_modules/react-icons/fa";
 import About_Details from "@components/about-us/about-details";
-import { about_us_details, community_details } from "@constants/prime";
+import {
+  about_us_details,
+  choose_us_card_info,
+  community_details,
+} from "@constants/prime";
 import Contact_Form from "@components/landing-page/contact-form";
 import { cn } from "@lib/utils";
+import Choose_Us_Card from "@components/about-us/choose-us-card";
 
 const About_Us_Page = () => {
   return (
@@ -89,7 +94,7 @@ const About_Us_Page = () => {
             data management effortless, so you can focus on what matters most:
             better healthcare outcomes.
           </p>
-          <div className="flex flex-col gap-y-4">
+          <div className="flex flex-col gap-y-8">
             {about_us_details.map(({ description, imageSrc, title }) => (
               <About_Details
                 key={title}
@@ -136,7 +141,7 @@ const About_Us_Page = () => {
             where knowledge meets collaboration helping each other improve drug
             data accuracy and healthcare systems nationwide.
           </p>
-          <div className="flex flex-col gap-y-4">
+          <div className="flex flex-col gap-y-8">
             {community_details.map(({ description, imageSrc, title }) => (
               <About_Details
                 key={title}
@@ -162,27 +167,26 @@ const About_Us_Page = () => {
       {/* Why Choose Us */}
       <section className="flex flex-col gap-14 poppins-font">
         <div className="flex flex-col justify-center gap-y-5">
-          <h2 className="text-4xl md:text-5xl font-semibold leading-[72px] text-someBlackColor">
+          <h2 className="text-center text-4xl md:text-5xl font-semibold leading-[72px] text-someBlackColor">
             Why Choose Us
           </h2>
-          <p className="max-w-[602px] text-[#767676] leading-relaxed">
+          <p className="max-w-[602px] text-[#767676] text-center mx-auto leading-relaxed">
             With every feature we design, we aim to make pharmaceutical data
             management faster, smarter, and safer_for everyone. Our goal is to
             empower pharmacists with reliable, data-driven tools that improve
             accuracy, compliance, and collaboration.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-x-8 max-w-[1288px] mx-auto">
-          <div className="flex flex-col gap-y-6 p-8 bg-cyanText/20 rounded-md">
-            <div className="flex justify-between items-center">
-              <h5>Our Vision</h5>
-              <div className="">Icon</div>
-            </div>
-            <p className="text-sm">
-              To create a unified, transparent digital space for pharmaceutical
-              knowledge.
-            </p>
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+          {choose_us_card_info.map(({ description, href, icon_src, title }) => (
+            <Choose_Us_Card
+              key={title}
+              description={description}
+              href={href}
+              icon_src={icon_src}
+              title={title}
+            />
+          ))}
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import { About_Details_Props } from "@components/about-us/about-details";
+import { Choose_Us_CardProps } from "@components/about-us/choose-us-card";
 import { More_Feature_Tile_Props } from "@components/feature-page/feature-tile";
 import { Feature_Tile_Props } from "@components/feature-tile";
 import { Price_Card_Props } from "@components/landing-page/price-card";
@@ -239,5 +240,29 @@ export const community_details: About_Details_Props[] = [
     imageSrc: "/svgs/about-us/collaboration.svg",
     description:
       "Join monthly webinars and virtual meetups on healthcare innovation.",
+  },
+];
+
+export const choose_us_card_info: Choose_Us_CardProps[] = [
+  {
+    title: "Our Vision",
+    description:
+      "To create a unified, transparent digital space for pharmaceutical knowledge.",
+    icon_src: "/svgs/about-us/vision.svg",
+    href: "/",
+  },
+  {
+    title: "Our Values",
+    description:
+      "Integrity, innovation, and impact_we believe in building solutions that serve real healthcare professionals.",
+    icon_src: "/svgs/about-us/vision.svg",
+    href: "/",
+  },
+  {
+    title: "Our Team",
+    description:
+      "A blend of pharmacists, designers, and technologists working together to make data management simple and secure.",
+    icon_src: "/svgs/about-us/team.svg",
+    href: "/",
   },
 ];
