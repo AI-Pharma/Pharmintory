@@ -40,7 +40,7 @@ const Root_Nav = () => {
 
       <div className="hidden md:flex gap-[.9375rem]">
         <Link
-          href="/login"
+          href="/signin"
           className="py-2 px-5 bg-[#FEFEEF] font-semibold leading-[1.5rem] tracking-[-0.0158rem] text-base rounded-md urbanist-font"
         >
           Sign In
