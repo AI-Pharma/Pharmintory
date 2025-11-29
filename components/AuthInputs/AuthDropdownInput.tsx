@@ -13,7 +13,6 @@ interface AuthDropdownInputProps {
 const AuthDropdownInput: React.FC<AuthDropdownInputProps> = ({ label, required, options, hintText }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState<string>('');
-    // const [searchTerm, setSearchTerm] = useState('');
 
     const handleSelect = (value: string) => {
         setSelectedValue(value);
