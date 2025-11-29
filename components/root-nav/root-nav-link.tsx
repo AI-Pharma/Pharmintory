@@ -9,7 +9,11 @@ interface RootNavLinkProps {
   children?: React.ReactNode;
 }
 
-const RootNavLink: React.FC<RootNavLinkProps> = ({ label, href, children }) => {
+const Root_Nav_Link: React.FC<RootNavLinkProps> = ({
+  label,
+  href,
+  children,
+}) => {
   const pathname = usePathname();
   return (
     <Link
@@ -26,4 +30,4 @@ const RootNavLink: React.FC<RootNavLinkProps> = ({ label, href, children }) => {
   );
 };
 
-export default RootNavLink;
+export default Root_Nav_Link;

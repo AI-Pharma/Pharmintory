@@ -1,14 +1,14 @@
 import { cn } from "@lib/utils";
 import Image from "next/image";
 
-export interface MeritTileProps {
+export interface Merit_Tile_Props {
   image: string;
   title: string;
   even?: boolean;
   description: string;
 }
 
-const MeritTile: React.FC<MeritTileProps> = ({
+const Merit_Tile: React.FC<Merit_Tile_Props> = ({
   image,
   title,
   description,
@@ -25,18 +25,18 @@ const MeritTile: React.FC<MeritTileProps> = ({
         <div className="relative flex items-center justify-center">
           <div
             className={cn(
-              "z-10 absolute h-[380px] lg:h-[490px] w-[70%] rounded-3xl",
+              "z-10 absolute h-[360px] sm:h-[560px] md:h-[380px] lg:h-[490px] w-[70%] rounded-3xl",
               even ? "bg-[#E8FAFE]" : "bg-[#C3D5FF]"
             )}
           ></div>
-          <div className="z-20 flex items-center justify-center px-4 py-4 bg-black rounded-[20px]">
+          <div className="z-20 flex items-center justify-center">
             <Image
               width={1000}
               src={image}
               height={1000}
               quality={100}
               alt="image of the application"
-              className=" max-h-[360px] w-auto"
+              className="max-h-[360px] w-auto"
             />
           </div>
         </div>
@@ -57,4 +57,4 @@ const MeritTile: React.FC<MeritTileProps> = ({
   );
 };
 
-export default MeritTile;
+export default Merit_Tile;

@@ -1,7 +1,7 @@
 import { cn } from "@lib/utils";
 import Image from "next/image";
 
-export interface PriceCardProps {
+export interface Price_Card_Props {
   headline: string;
   description: string;
   price: number;
@@ -10,14 +10,14 @@ export interface PriceCardProps {
   lastCard?: boolean;
 }
 
-const PriceCard = ({
+const Price_Card = ({
   headline,
   description,
   features,
   frequency,
   price,
   lastCard,
-}: PriceCardProps) => {
+}: Price_Card_Props) => {
   return (
     <>
       <div className="flex flex-col max-w-[255px] urbanist-font">
@@ -90,4 +90,4 @@ const PriceCard = ({
   );
 };
 
-export default PriceCard;
+export default Price_Card;

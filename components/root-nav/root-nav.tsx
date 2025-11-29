@@ -1,5 +1,5 @@
 import Image from "next/image";
-import RootNavLink from "./RootNavLinks";
+import RootNavLink from "./root-nav-link";
 import Link from "@node_modules/next/link";
 import { HiBars2 } from "@node_modules/react-icons/hi2";
 import {
@@ -11,13 +11,14 @@ import {
   SheetTrigger,
 } from "@components/ui/sheet";
 import { CgClose } from "@node_modules/react-icons/cg";
+import Root_Nav_Link from "./root-nav-link";
 
-const RootNav = () => {
+const Root_Nav = () => {
   const linkSet = [
     { href: "/", label: "Home" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/about", label: "About" },
+    { href: "/about-us", label: "About" },
   ];
   return (
     <header className="flex px-4 lg:px-[1.875rem] justify-between py-4 lg:py-[1.5625rem] h-[5rem] items-center">
@@ -39,7 +40,7 @@ const RootNav = () => {
 
       <div className="hidden md:flex gap-[.9375rem]">
         <Link
-          href="/login"
+          href="/signin"
           className="py-2 px-5 bg-[#FEFEEF] font-semibold leading-[1.5rem] tracking-[-0.0158rem] text-base rounded-md urbanist-font"
         >
           Sign In
@@ -72,9 +73,9 @@ const RootNav = () => {
           </SheetHeader>
           <nav className="flex flex-col p-4 gap-6">
             {linkSet.map(({ href, label }) => (
-              <RootNavLink key={href} label={""} href={href}>
+              <Root_Nav_Link key={href} label={""} href={href}>
                 <SheetClose>{label}</SheetClose>
-              </RootNavLink>
+              </Root_Nav_Link>
             ))}
           </nav>
         </SheetContent>
@@ -83,4 +84,4 @@ const RootNav = () => {
   );
 };
 
-export default RootNav;
+export default Root_Nav;
