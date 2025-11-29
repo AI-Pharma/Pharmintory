@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { FilledButton } from '@components/Buttons'
-import AuthPharmaDropdownInput from '@components/AuthInputs/AuthPharmaDropdownInput'
 import AuthInput from '@components/AuthInputs/AuthInput'
 import AuthDropdownInput from '@components/AuthInputs/AuthDropdownInput'
+import AuthPharmaDropdownInput from '@components/AuthInputs/AuthPharmaDropdownInput'
 
 const SignUpPage = () => {
     return (
@@ -41,11 +41,17 @@ const SignUpPage = () => {
                         'Customer Support & Maintenance'
                     ]}
                 />
-                <FilledButton
-                    label='Continue'
-                    className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
-                />
-                <span className='text-sm leading-[1.625rem] tracking-[-0.0175rem] text-authTitleColor'>Already registered? <Link href='/login' className='font-bold text-cyanText'>Sign into your account</Link></span>
+
+                <Link
+                    href='signup/verify'
+                    className='w-full'
+                >
+                    <FilledButton
+                        label='Continue'
+                        className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
+                    />
+                </Link>
+
             </div>
             <Image
                 width={689.999}

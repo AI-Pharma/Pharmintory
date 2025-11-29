@@ -12,9 +12,7 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
     const [pharmacies, setPharmacies] = useState<PharmacyProperties[]>([])
     const [selectedString, setSelectedString] = useState<string | null>(null)
 
-    // Debounced search function
     useEffect(() => {
-        // If dropdown is closed or search is empty, don't fetch
         if (!activated || searchTerm.trim().length === 0) {
             setPharmacies([])
             return
@@ -22,10 +20,10 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
 
         const delayDebounceFn = setTimeout(() => {
             fetchPharmacies(searchTerm)
-        }, 300) // Wait 300ms after user stops typing
+        }, 300)
 
         return () => clearTimeout(delayDebounceFn)
-    }, [searchTerm, activated]) // Trigger when searchTerm OR activated changes
+    }, [searchTerm, activated])
 
     const fetchPharmacies = async (search: string) => {
         setIsLoading(true)
@@ -53,10 +51,8 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
         }
     }
 
-    // Open dropdown and focus on search input
     const handleDropdownClick = () => {
         setActivated(true)
-        // If there's already a search term, fetch results when opening
         if (searchTerm.trim().length > 0 && pharmacies.length === 0) {
             fetchPharmacies(searchTerm)
         }
@@ -70,7 +66,6 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
                 {label}<span className='text-cyanText'>{required && '*'}</span>
             </p>
 
-            {/* Dropdown Trigger */}
             <div
                 onClick={handleDropdownClick}
                 className='h-[3.125rem] rounded-2xl border border-[#E0E5F2] flex items-center py-[.5rem] px-[1rem] active:border-cyanText justify-between cursor-pointer'
@@ -85,13 +80,11 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
                 />
             </div>
 
-            {/* Dropdown Content */}
             <div className={`flex-col w-[51.125rem] bg-white rounded-2xl pt-[16px] px-[24px] mt-[14px] ${activated ? 'flex' : 'hidden'} w-[26.25rem] shadow-xl absolute z-2`}>
                 <span className='capitalize mb-[1.7188rem] text-[#6C757D] text-[.9375rem] font-semibold'>
                     Available pharmacies
                 </span>
 
-                {/* Search Input */}
                 <div className='my-[.75rem] h-[3rem] rounded-[.5rem] border border-[#00000066] flex items-center py-[.5rem] px-[1rem] active:border-cyanText justify-between'>
                     <input
                         type='text'
@@ -116,56 +109,57 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
                     )}
                 </div>
 
-                {/* Loading State */}
                 {isLoading && (
                     <div className="p-4 text-center text-gray-500">
                         Searching pharmacies...
                     </div>
                 )}
 
-                {/* Error State */}
                 {error && !isLoading && (
                     <div className="p-4 text-center text-red-500">
                         Error: {error}
                     </div>
                 )}
 
-                {/* Results Table */}
-                <table className='overflow-y-auto mr-auto'>
-                    <thead className='inter-font font-medium text-[1.125rem] sticky gap-x-[7.8125rem] flex'>
-                        <th className='text-cyanText'>Pharmacies</th>
-                        <th>Region</th>
-                        <th>Location</th>
-                    </thead>
+                <div className="overflow-y-auto max-h-60">
+                    <table className='w-full'>
+                        <thead className='inter-font font-medium text-[1.125rem] text-left sticky top-0 bg-white'>
+                            <tr className='border-b border-gray-200'>
+                                <th className='text-cyanText p-3 w-1/3'>Pharmacies</th>
+                                <th className='p-3 w-1/3'>Region</th>
+                                <th className='p-3 w-1/3'>Location</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        {!isLoading && !error && filteredOptions.length > 0 ? (
-                            filteredOptions.map((pharmacyProps, index) => (
-                                <tr
-                                    key={`${pharmacyProps.name}-${index}`}
-                                    className={`hover:bg-cyan-50 cursor-pointer ${selectedString === pharmacyProps.name ? 'bg-cyan-100' : ''}`}
-                                    onClick={() => {
-                                        setSelectedString(pharmacyProps.name);
-                                        setActivated(false);
-                                        setSearchTerm(''); // Clear search when selected
-                                    }}
-                                >
-                                    <td className='p-3'>{pharmacyProps.name}</td>
-                                    <td className='p-3'>{pharmacyProps.region}</td>
-                                    <td className='p-3'>{pharmacyProps.location}</td>
-                                </tr>
-                            ))
-                        ) : (
-                            !isLoading && !error && (
-                                <tr>
-                                    <td colSpan={3} className='p-4 text-center text-gray-500'>
-                                        {searchTerm ? 'No matching pharmacies found' : 'Start typing to search pharmacies'}
-                                    </td>
-                                </tr>
-                            )
-                        )}
-                    </tbody>
-                </table>
+                        <tbody>
+                            {!isLoading && !error && filteredOptions.length > 0 ? (
+                                filteredOptions.map((pharmacyProps, index) => (
+                                    <tr
+                                        key={`${pharmacyProps.name}-${index}`}
+                                        className={`hover:bg-cyan-50 cursor-pointer border-b border-gray-100 ${selectedString === pharmacyProps.name ? 'bg-cyan-100' : ''}`}
+                                        onClick={() => {
+                                            setSelectedString(pharmacyProps.name);
+                                            setActivated(false);
+                                            setSearchTerm('');
+                                        }}
+                                    >
+                                        <td className='p-3 lowercase w-1/3' style={{ textTransform: 'capitalize' }}>{pharmacyProps.name}</td>
+                                        <td className='p-3 capitalize w-1/3'>{pharmacyProps.region}</td>
+                                        <td className='p-3 lowercase w-1/3' style={{ textTransform: 'capitalize' }}>{pharmacyProps.location}</td>
+                                    </tr>
+                                ))
+                            ) : (
+                                !isLoading && !error && (
+                                    <tr>
+                                        <td colSpan={3} className='p-4 text-center text-gray-500'>
+                                            {searchTerm ? 'No matching pharmacies found' : 'Start typing to search pharmacies'}
+                                        </td>
+                                    </tr>
+                                )
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     )

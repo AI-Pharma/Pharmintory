@@ -26,7 +26,7 @@ const SignInPage = () => {
                     label='Sign In'
                     className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
                 />
-                <span className='text-sm leading-[1.625rem] tracking-[-0.0175rem] text-authTitleColor'>Already registered? <Link href='/login' className='font-bold text-cyanText'>Sign into your account</Link></span>
+                <span className='text-sm leading-[1.625rem] tracking-[-0.0175rem] text-authTitleColor'>Not registered yet? <Link href='/signup' className='font-bold text-cyanText'>Create an account</Link></span>
             </div>
             <Image
                 width={689.999}
