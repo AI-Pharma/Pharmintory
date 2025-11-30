@@ -2,22 +2,26 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import { AuthInputProps } from './types';
 
-interface AuthDropdownInputProps {
-    label: string
-    hintText: string
-    options: string[]
-    required: boolean
-}
-
-const AuthDropdownInput: React.FC<AuthDropdownInputProps> = ({ label, required, options, hintText }) => {
+const AuthDropdownInput: React.FC<AuthInputProps> = ({
+    label,
+    options,
+    required,
+    hintText,
+    textValue,
+    onChange,
+}) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedValue, setSelectedValue] = useState<string>('');
 
-    const handleSelect = (value: string) => {
-        setSelectedValue(value);
+    const handleSelect = (selectedValue: string) => {
+        onChange?.(selectedValue); // Send selected value to parent
         setIsOpen(false);
     };
+
+    // Use textValue if provided, otherwise use hintText
+    const displayText = textValue || hintText || 'Select an option';
+    const isSelected = !!textValue; // Check if a value is selected
 
     return (
         <div className='flex flex-col gap-[13px] w-[25.625rem] mb-[1.5625rem] relative'>
@@ -30,8 +34,8 @@ const AuthDropdownInput: React.FC<AuthDropdownInputProps> = ({ label, required, 
                 className='h-[3.125rem] rounded-2xl border border-[#E0E5F2] flex items-center py-[.5rem] px-[1rem] active:border-cyanText justify-between cursor-pointer'
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <span className={`${!selectedValue ? 'text-gray-400' : 'text-black'}`}>
-                    {selectedValue || hintText}
+                <span className={`${!isSelected ? 'text-gray-400' : 'text-black'}`}>
+                    {displayText}
                 </span>
                 <Image
                     src='/svgs/auth_dropdown.svg'
@@ -45,10 +49,10 @@ const AuthDropdownInput: React.FC<AuthDropdownInputProps> = ({ label, required, 
             {isOpen && (
                 <div className='absolute top-[5.5rem] w-full bg-white rounded-2xl shadow-xl z-10 border border-[#E0E5F2] overflow-hidden'>
                     <div className='max-h-60 overflow-y-auto'>
-                        {options.map((option, index) => (
+                        {options?.map((option, index) => (
                             <div
                                 key={index}
-                                className={`p-3 hover:bg-cyan-50 cursor-pointer ${selectedValue === option ? 'bg-cyan-100' : ''}`}
+                                className={`p-3 hover:bg-cyan-50 cursor-pointer ${textValue === option && 'bg-cyan-100'}`}
                                 onClick={() => handleSelect(option)}
                             >
                                 {option}

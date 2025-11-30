@@ -2,12 +2,18 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import { FilledButton } from '@components/Buttons'
 import AuthInput from '@components/AuthInputs/AuthInput'
+import { PharmacyProperties } from '@components/AuthInputs/types'
 import AuthDropdownInput from '@components/AuthInputs/AuthDropdownInput'
 import AuthPharmaDropdownInput from '@components/AuthInputs/AuthPharmaDropdownInput'
 
 const SignUpPage = () => {
+    const [email, setEmail] = useState('')
+    const [business, setBusiness] = useState('')
+    const [employees, setEmployees] = useState('')
+    const [selectedPharmacy, setSelectedPharmacy] = useState<PharmacyProperties | null>(null)
     return (
         <main className='flex pl-[266px] pr-[102px] gap-[248px] pt-[96px] items-center justify-center mb-[12.5rem]'>
             <div className='flex flex-col items-start w-[410px]'>
@@ -17,15 +23,21 @@ const SignUpPage = () => {
                 <AuthPharmaDropdownInput
                     label='Pharmacy'
                     required={true}
+                    value={selectedPharmacy}
+                    onChangePharmacy={setSelectedPharmacy}
                 />
                 <AuthInput
                     label='Email'
                     required={true}
+                    textValue={email}
+                    onChange={setEmail}
                     hintText='danieljacobs.@abpharmacy.com'
                 />
                 <AuthDropdownInput
                     label='Employees'
                     required={true}
+                    textValue={employees}
+                    onChange={setEmployees}
                     hintText='1 - 10 Employees'
                     options={[
                         '1 - 5 Employees', '1 - 10 Employees', '1 - 15 Employees', '1 - 20 Employees', 'N/A'
@@ -34,6 +46,8 @@ const SignUpPage = () => {
                 <AuthDropdownInput
                     label='Business'
                     required={true}
+                    textValue={business}
+                    onChange={setBusiness}
                     hintText='Inventory Management'
                     options={[
                         'Inventory Management', 'Business Consultancy & Strategy', 'Investment & Financial Planning',

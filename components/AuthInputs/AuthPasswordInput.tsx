@@ -1,11 +1,13 @@
-'use client'
-
 import Image from 'next/image'
-import { useState } from 'react';
 import { AuthInputProps } from './types';
 
-const AuthPasswordInput: React.FC<AuthInputProps> = ({ label, hintText, required }) => {
-    const [inputText, setInputText] = useState<string>()
+const AuthPasswordInput: React.FC<AuthInputProps> = ({
+    label,
+    hintText,
+    required,
+    onChange,
+    textValue,
+}) => {
     function togglePasswordVisibility() {
         const passwordInput = document.getElementById('passwordInput');
 
@@ -24,10 +26,10 @@ const AuthPasswordInput: React.FC<AuthInputProps> = ({ label, hintText, required
             <div className='flex items-center border rounded-2xl border-[#E0E5F2] h-[3.125rem] justify-between pr-[1.125rem]'>
                 <input
                     type='password'
-                    value={inputText}
+                    value={textValue}
                     id='passwordInput'
                     placeholder={hintText}
-                    onChange={(e) => setInputText(e.target.value)}
+                    onChange={(e) => onChange?.(e.target.value)}
                     className='pl-[1.5rem] w-full border-none focus:outline-none focus:ring-0'
                 />
                 <Image

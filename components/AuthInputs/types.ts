@@ -1,8 +1,12 @@
 export interface AuthInputProps {
     label: string
     hintText?: string
-    required: boolean
-    options?: PharmacyProperties[]
+    options?: string[]
+    textValue?: string
+    required?: boolean
+    value?: PharmacyProperties | null
+    onChange?: (value: string) => void
+    onChangePharmacy?: (pharmacy: PharmacyProperties | null) => void
 }
 
 export interface PharmacyProperties {

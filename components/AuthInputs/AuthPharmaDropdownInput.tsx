@@ -4,13 +4,17 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { AuthInputProps, PharmacyProperties } from './types'
 
-const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, options = [] }) => {
+const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({
+    label,
+    value,
+    required,
+    onChangePharmacy
+}) => {
     const [searchTerm, setSearchTerm] = useState('')
     const [activated, setActivated] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const [pharmacies, setPharmacies] = useState<PharmacyProperties[]>([])
-    const [selectedString, setSelectedString] = useState<string | null>(null)
 
     useEffect(() => {
         if (!activated || searchTerm.trim().length === 0) {
@@ -58,10 +62,16 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
         }
     }
 
-    const filteredOptions = pharmacies.length > 0 ? pharmacies : options
+    const handlePharmacySelect = (pharmacy: PharmacyProperties) => {
+        onChangePharmacy?.(pharmacy)
+        setActivated(false)
+        setSearchTerm('')
+    }
+
+    const filteredOptions = pharmacies.length > 0 ? pharmacies : []
 
     return (
-        <div className='flex flex-col gap-[13px] w-[25.625rem] mb-[1.5625rem]'>
+        <div className='flex flex-col gap-[13px] w-[25.625rem] mb-[1.5625rem] relative'>
             <p className='text-authTitleColor text-sm font-medium leading-[14px] tracking-[-0.28px]'>
                 {label}<span className='text-cyanText'>{required && '*'}</span>
             </p>
@@ -70,7 +80,8 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
                 onClick={handleDropdownClick}
                 className='h-[3.125rem] rounded-2xl border border-[#E0E5F2] flex items-center py-[.5rem] px-[1rem] active:border-cyanText justify-between cursor-pointer'
             >
-                {selectedString ?? 'ABBA Chemists Ltd'}
+                {/* Display selected pharmacy name or default text */}
+                {value ? value.name : 'Select a pharmacy'}
                 <Image
                     src='/svgs/auth_dropdown.svg'
                     width={24}
@@ -80,7 +91,7 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
                 />
             </div>
 
-            <div className={`flex-col w-[51.125rem] bg-white rounded-2xl pt-[16px] px-[24px] mt-[14px] ${activated ? 'flex' : 'hidden'} w-[26.25rem] shadow-xl absolute z-2`}>
+            <div className={`flex-col w-[51.125rem] bg-white rounded-2xl pt-[16px] px-[24px] mt-[14px] ${activated ? 'flex' : 'hidden'} w-[26.25rem] shadow-xl absolute z-10 top-full`}>
                 <span className='capitalize mb-[1.7188rem] text-[#6C757D] text-[.9375rem] font-semibold'>
                     Available pharmacies
                 </span>
@@ -136,12 +147,8 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
                                 filteredOptions.map((pharmacyProps, index) => (
                                     <tr
                                         key={`${pharmacyProps.name}-${index}`}
-                                        className={`hover:bg-cyan-50 cursor-pointer border-b border-gray-100 ${selectedString === pharmacyProps.name ? 'bg-cyan-100' : ''}`}
-                                        onClick={() => {
-                                            setSelectedString(pharmacyProps.name);
-                                            setActivated(false);
-                                            setSearchTerm('');
-                                        }}
+                                        className={`hover:bg-cyan-50 cursor-pointer border-b border-gray-100 ${value?.name === pharmacyProps.name ? 'bg-cyan-100' : ''}`}
+                                        onClick={() => handlePharmacySelect(pharmacyProps)}
                                     >
                                         <td className='p-3 lowercase w-1/3' style={{ textTransform: 'capitalize' }}>{pharmacyProps.name}</td>
                                         <td className='p-3 capitalize w-1/3'>{pharmacyProps.region}</td>
@@ -165,4 +172,4 @@ const AuthPharmaDropdownInput: React.FC<AuthInputProps> = ({ label, required, op
     )
 }
 
-export default AuthPharmaDropdownInput;
+export default AuthPharmaDropdownInput
