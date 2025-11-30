@@ -1,8 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { FilledButton } from '@components/Buttons'
 import AuthInput from '@components/AuthInputs/AuthInput'
 import { PharmacyProperties } from '@components/AuthInputs/types'
@@ -10,10 +10,24 @@ import AuthDropdownInput from '@components/AuthInputs/AuthDropdownInput'
 import AuthPharmaDropdownInput from '@components/AuthInputs/AuthPharmaDropdownInput'
 
 const SignUpPage = () => {
+    const router = useRouter()
     const [email, setEmail] = useState('')
     const [business, setBusiness] = useState('')
     const [employees, setEmployees] = useState('')
     const [selectedPharmacy, setSelectedPharmacy] = useState<PharmacyProperties | null>(null)
+
+    const handleContinue = () => {
+        const params = new URLSearchParams()
+
+        if (email) params.append('email', email)
+        if (business) params.append('business', business)
+        if (employees) params.append('employees', employees)
+        if (selectedPharmacy?.name) params.append('pharmacy', selectedPharmacy.name)
+        if (selectedPharmacy?.region) params.append('pharmacyRegion', selectedPharmacy.region)
+        if (selectedPharmacy?.location) params.append('pharmacyLocation', selectedPharmacy.location)
+
+        router.push(`/signup/verify?${params.toString()}`)
+    }
     return (
         <main className='flex pl-[266px] pr-[102px] gap-[248px] pt-[96px] items-center justify-center mb-[12.5rem]'>
             <div className='flex flex-col items-start w-[410px]'>
@@ -56,15 +70,11 @@ const SignUpPage = () => {
                     ]}
                 />
 
-                <Link
-                    href='signup/verify'
-                    className='w-full'
-                >
-                    <FilledButton
-                        label='Continue'
-                        className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
-                    />
-                </Link>
+                <FilledButton
+                    label='Continue'
+                    onClick={handleContinue}
+                    className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
+                />
 
             </div>
             <Image

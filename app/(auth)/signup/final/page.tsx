@@ -1,8 +1,13 @@
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react'
 import { FilledButton } from '@components/Buttons'
 import AuthPasswordInput from '@components/AuthInputs/AuthPasswordInput'
 
 const FinalAuthPage = () => {
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
     return (
         <main className='flex pl-[16.625rem] pr-[6.375rem] gap-[15.5rem] pt-[6rem] items-center justify-center mb-[12.5rem]'>
             <div className='flex flex-col items-start w-[25.625rem]'>
@@ -13,11 +18,15 @@ const FinalAuthPage = () => {
                     label='Password'
                     required={true}
                     hintText='Password'
-                />
+                    textValue={password}
+                    onChange={setPassword}
+                    />
                 <AuthPasswordInput
-                    label='Confirm Password'
                     required={true}
                     hintText='Confirmation'
+                    label='Confirm Password'
+                    textValue={confirmPassword}
+                    onChange={setConfirmPassword}
                 />
                 <FilledButton
                     label='Get Started'

@@ -4,6 +4,7 @@ interface ButtonProps {
     icon?: string
     label?: string
     className?: string
+    onClick?: () => void
 }
 
 export const NormalButton:React.FC<ButtonProps> = ({ label, icon, className }) => {
@@ -44,9 +45,12 @@ export const OutlinedButton:React.FC<ButtonProps> = ({ label, icon, className })
     )
 }
 
-export const FilledButton:React.FC<ButtonProps> = ({ label, icon, className }) => {
+export const FilledButton:React.FC<ButtonProps> = ({ label, icon, className, onClick }) => {
     return (
-        <button className={`filledButton inter-font ${className}`}>
+        <button
+            className={`filledButton inter-font ${className}`}
+            onClick={onClick}
+        >
             {
                 icon && (
                     <Image

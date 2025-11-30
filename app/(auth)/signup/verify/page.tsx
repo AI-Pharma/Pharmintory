@@ -1,8 +1,34 @@
-import Link from 'next/link'
+'use client'
+
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { FilledButton } from '@components/Buttons'
 
-const VerifyPage = () => {
+const VerifyPage = ({
+    searchParams
+}: {
+    searchParams: {
+        email?: string
+        business?: string
+        pharmacy?: string
+        employees?: string
+        pharmacyRegion?: string
+        pharmacyLocation?: string
+    }
+}) => {
+    const router = useRouter()
+    const handleContinue = () => {
+        const params = new URLSearchParams()
+
+        if (searchParams.email) params.append('email', searchParams.email)
+        if (searchParams.business) params.append('business', searchParams.business)
+        if (searchParams.employees) params.append('employees', searchParams.employees)
+        if (searchParams.pharmacy) params.append('pharmacy', searchParams.pharmacy)
+        if (searchParams.pharmacyRegion) params.append('pharmacyRegion', searchParams.pharmacyRegion)
+        if (searchParams.pharmacyLocation) params.append('pharmacyLocation', searchParams.pharmacyLocation)
+
+        router.push(`/signup/final?${params.toString()}`)
+    }
 
     return (
         <main className='flex pl-[16.625rem] pr-[6.375rem] gap-[15.5rem] pt-[6rem] items-center justify-center mb-[12.5rem]'>
@@ -14,15 +40,12 @@ const VerifyPage = () => {
 
                 </div>
 
-                <Link
-                    href='/signup/final'
-                    className='w-full'
-                >
-                    <FilledButton
-                        label='Continue'
-                        className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
-                    />
-                </Link>
+                <FilledButton
+                    label='Continue'
+                    onClick={handleContinue}
+                    className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
+                />
+
 
             </div>
             <Image
