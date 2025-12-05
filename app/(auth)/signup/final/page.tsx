@@ -5,9 +5,53 @@ import { useState } from 'react'
 import { FilledButton } from '@components/Buttons'
 import AuthPasswordInput from '@components/AuthInputs/AuthPasswordInput'
 
-const FinalAuthPage = () => {
+const FinalAuthPage = ({
+    searchParams
+}: {
+    searchParams: {
+        email?: string
+        business?: string
+        pharmacy?: string
+        employees?: string
+        pharmacyRegion?: string
+        pharmacyLocation?: string
+    }
+}) => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+
+    const handleSubmit = async () => {
+        if (password !== confirmPassword) {
+            window.alert('Password and confirm password must be identical')
+            return
+        }
+
+        try {
+            const res = await fetch('https://ai-pharma-f8a3.onrender.com/auth/signUp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: searchParams.email,
+                    business: searchParams.business,
+                    pharmacy: searchParams.pharmacy,
+                    password: confirmPassword,
+                    region: searchParams.pharmacyRegion,
+                    location: searchParams.pharmacyLocation
+                })
+            })
+
+            if (!res.ok) {
+                return
+            }
+
+            const data = await res.json()
+            console.log(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
     return (
         <main className='flex pl-[16.625rem] pr-[6.375rem] gap-[15.5rem] pt-[6rem] items-center justify-center mb-[12.5rem]'>
             <div className='flex flex-col items-start w-[25.625rem]'>
@@ -20,7 +64,7 @@ const FinalAuthPage = () => {
                     hintText='Password'
                     textValue={password}
                     onChange={setPassword}
-                    />
+                />
                 <AuthPasswordInput
                     required={true}
                     hintText='Confirmation'
@@ -30,6 +74,7 @@ const FinalAuthPage = () => {
                 />
                 <FilledButton
                     label='Get Started'
+                    onClick={handleSubmit}
                     className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
                 />
 
