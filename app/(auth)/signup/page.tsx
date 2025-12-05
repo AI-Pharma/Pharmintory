@@ -1,63 +1,57 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import AuthInput, { AuthDropdownInput, AuthPharmaDropdownInput, PharmacyProperties } from '@components/AuthInput'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { FilledButton } from '@components/Buttons'
+import AuthInput from '@components/AuthInputs/AuthInput'
+import { PharmacyProperties } from '@components/AuthInputs/types'
+import AuthDropdownInput from '@components/AuthInputs/AuthDropdownInput'
+import AuthPharmaDropdownInput from '@components/AuthInputs/AuthPharmaDropdownInput'
 
 const SignUpPage = () => {
-    const [isLoading, setIsLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
-    const [pharmacies, setPharmacies] = useState<PharmacyProperties[]>([])
+    const router = useRouter()
+    const [email, setEmail] = useState('')
+    const [business, setBusiness] = useState('')
+    const [employees, setEmployees] = useState('')
+    const [selectedPharmacy, setSelectedPharmacy] = useState<PharmacyProperties | null>(null)
 
-    useEffect(() => {
-        setIsLoading(true)
-        setError(null)
-        fetch('https://ai-pharma-f8a3.onrender.com/pharmacies')
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error(`Failed to fetch: ${res.status}`)
-                }
-                return res.json()
-            })
-            .then((data: Array<PharmacyProperties>) => {
-                console.log('API data received:', data)
-                const result = data.map((pharmacyInfo) => ({
-                    name: pharmacyInfo.name,
-                    region: pharmacyInfo.region,
-                    location: pharmacyInfo.location
-                }))
-                setPharmacies(result)
-            })
-            .catch((error) => {
-                console.error('Fetch error:', error)
-                setError(error.message)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
-    }, [])
+    const handleContinue = () => {
+        const params = new URLSearchParams()
+
+        if (email) params.append('email', email)
+        if (business) params.append('business', business)
+        if (employees) params.append('employees', employees)
+        if (selectedPharmacy?.name) params.append('pharmacy', selectedPharmacy.name)
+        if (selectedPharmacy?.region) params.append('pharmacyRegion', selectedPharmacy.region)
+        if (selectedPharmacy?.location) params.append('pharmacyLocation', selectedPharmacy.location)
+
+        router.push(`/signup/verify?${params.toString()}`)
+    }
     return (
-        <main className='flex pl-[16.625rem] pr-[6.375rem] gap-[15.5rem] pt-[6rem] items-center justify-center'>
-            <div className='flex flex-col items-start w-[25.625rem]'>
-                <span className='capitalize text-authTitleColor text-4xl font-bold leading-[3.5rem] tracking-[-0.045rem] mb-2'>sign up</span>
-                <span className='text-[#90E0EF] text-[16px] leading-[1rem] tracking-[-0.045rem] mb-[1.8125rem]'>Enter your details to further proceed</span>
-
-                {isLoading && <div className='animate-spin rounded-full bg-cyanText border-t-transparent size-3'/>}
-                {error && <div className="text-red-500">Error: {error}</div>}
+        <main className='flex pl-[266px] pr-[102px] gap-[248px] pt-[96px] items-center justify-center mb-[12.5rem]'>
+            <div className='flex flex-col items-start w-[410px]'>
+                <span className='capitalize text-authTitleColor text-4xl font-bold leading-[56px] tracking-[-0.72px] mb-2'>sign up</span>
+                <span className='text-[#90E0EF] text-[1rem] leading-[16px] tracking-[-0.72px] mb-[29px]'>Enter your details to further proceed</span>
 
                 <AuthPharmaDropdownInput
                     label='Pharmacy'
                     required={true}
-                    options={pharmacies}
+                    value={selectedPharmacy}
+                    onChangePharmacy={setSelectedPharmacy}
                 />
                 <AuthInput
                     label='Email'
                     required={true}
+                    textValue={email}
+                    onChange={setEmail}
                     hintText='danieljacobs.@abpharmacy.com'
                 />
                 <AuthDropdownInput
                     label='Employees'
                     required={true}
+                    textValue={employees}
+                    onChange={setEmployees}
                     hintText='1 - 10 Employees'
                     options={[
                         '1 - 5 Employees', '1 - 10 Employees', '1 - 15 Employees', '1 - 20 Employees', 'N/A'
@@ -66,6 +60,8 @@ const SignUpPage = () => {
                 <AuthDropdownInput
                     label='Business'
                     required={true}
+                    textValue={business}
+                    onChange={setBusiness}
                     hintText='Inventory Management'
                     options={[
                         'Inventory Management', 'Business Consultancy & Strategy', 'Investment & Financial Planning',
@@ -73,11 +69,18 @@ const SignUpPage = () => {
                         'Customer Support & Maintenance'
                     ]}
                 />
+
+                <FilledButton
+                    label='Continue'
+                    onClick={handleContinue}
+                    className='w-full rounded-[1rem] h-[3.375rem] mb-[1.5625rem] font-bold'
+                />
+
             </div>
             <Image
                 width={689.999}
                 height={528.434}
-                className='z-[-1] size-[35rem]'
+                className='z-[-1] size-[560px]'
                 src='/images/auth/sign_up.png'
                 alt='decorative image for sign up page'
             />
