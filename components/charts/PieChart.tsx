@@ -2,18 +2,25 @@
 
 import { Pie, PieChart, Cell, Tooltip, Legend } from 'recharts'
 
-const CustomLegend = (props) => {
-    const { payload } = props;
+type LegendItem = {
+    color: string;
+    value: string;
+};
 
+type CustomLegendProps = {
+    payload?: LegendItem[];
+};
+
+const CustomLegend = ({ payload = [] }: CustomLegendProps) => {
     return (
-        <div className='flex flex-col w-[19.375rem] mt-[3.65625rem]'>
-            {/* TODO: Make button component */}
-            <span className='text-xl font-medium leading-[1.40625rem] justify-between tracking-[-0.025rem]'>List categories</span>
+        <div className="flex flex-col w-[19.375rem] mt-[3.65625rem]">
+            <span className="text-xl font-medium">List categories</span>
+
             <div className="grid grid-cols-2 gap-2 mt-4">
-                {payload.map((entry, index) => (
-                    <div key={`item-${index}`} className="flex items-center space-x-1">
+                {payload.map((entry: LegendItem, index: number) => (
+                    <div key={index} className="flex items-center space-x-1">
                         <div
-                            className='size-[1.25rem] rounded-[0.25rem]'
+                            className="size-[1.25rem] rounded-[0.25rem]"
                             style={{ backgroundColor: entry.color }}
                         />
                         <span className="text-sm">{entry.value}</span>
